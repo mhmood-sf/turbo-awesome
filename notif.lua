@@ -1,0 +1,1 @@
+-- A wrapper over naughty for nicer notifications.
