@@ -17,6 +17,8 @@ end
 
 -- Returns shell command output, or fallback if
 -- command fails.
+-- TODO: See https://awesomewm.org/doc/api/libraries/awful.spawn.html
+-- TODO: Using io.popen is not recommended.
 local function shell(cmd, fallback)
     local handle = io.popen(cmd)
     local output = handle:read("*a")
@@ -29,9 +31,48 @@ local function shell(cmd, fallback)
     end
 end
 
+-- Sets upper/lower limits for a given number
+local function constrainNum(n, lower, upper)
+    if n > upper then
+        return upper
+    elseif n < lower then
+        return lower
+    else
+        return n
+    end
+end
+
+-- Returns a string constrained to specified length.
+-- align controls where to cut off the string (
+-- left-aligned cuts off at the end, right-align
+-- at the start, the default is the center.)
+local function constrainStr(str, size, align)
+    if string.len(str) < size then
+        return str
+    end
+
+    if align == "left" then
+        local substr = string.sub(str, 1, size - 3)
+        return strip(substr) .. "..."
+    elseif align == "right" then
+        local len = string.len(str)
+        local substr = string.sub (str, len - size + 3, len)
+        return "..." .. strip(substr)
+    else
+        local len = string.len(str)
+        local lsize = math.ceil(size / 2)
+        local rsize = math.floor(size / 2)
+        local left = string.sub(str, 1, lsize)
+        local right = string.sub(str, len - rsize + 3, len)
+        return strip(left) .. "..." .. strip(right)
+    end
+end
+
 return {
     shell = shell,
     split = split,
-    strip = strip
+    strip = strip,
+    constrainStr = constrainStr,
+    constrainNum = constrainNum
 }
 
