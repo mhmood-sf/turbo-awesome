@@ -9,7 +9,7 @@ local hotkeys_popup = require "awful.hotkeys_popup"
 local dashb = require "cfg.alpha.ui.dashb"
 
 local audio = require "system.audio"
-local display = require "system.display"
+local brightness = require "system.brightness"
 
 -- Key bindings
 globalkeys = gears.table.join(
@@ -20,9 +20,9 @@ globalkeys = gears.table.join(
               {description = "Decrease volume by 5%", group = "Fn Controls"}),
 
     -- Brightness up/down using xrandr
-    awful.key({ }, "XF86MonBrightnessUp", display.brightness_up,
+    awful.key({ }, "XF86MonBrightnessUp", brightness.up,
               {description = "Increase brightness by 5%", group = "Fn Controls"}),
-    awful.key({ }, "XF86MonBrightnessDown", display.brightness_down,
+    awful.key({ }, "XF86MonBrightnessDown", brightness.down,
               {description = "Decrease brightness by 5%", group = "Fn Controls"}),
 
     -- Help popup
