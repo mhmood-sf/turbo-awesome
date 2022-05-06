@@ -15,4 +15,8 @@ local cal = wibox.widget {
     widget = wibox.container.background
 }
 
+function cal.update()
+    cal.widget.date = os.date('*t')
+end
+
 return cal

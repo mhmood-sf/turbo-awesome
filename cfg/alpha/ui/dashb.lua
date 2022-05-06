@@ -48,6 +48,7 @@ grid:add_widget_at(calendar, 2, 1, 2, 2)
 
 popup.update = function()
     clock.update()
+    calendar.update()
 end
 
 -- Toggle popup visibility to show/close it
