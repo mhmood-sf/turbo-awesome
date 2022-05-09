@@ -37,10 +37,10 @@ local function down()
     set_brightness(current)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
-        local notif = naughty.notify({text=notif_text})
+        local notif = naughty.notify({title="Display",text=notif_text})
         notif_id = notif.id
     else
-        naughty.notify({text=notif_text, replaces_id=notif_id})
+        naughty.notify({title="Display",text=notif_text, replaces_id=notif_id})
     end
 end
 
@@ -49,10 +49,10 @@ local function up()
     set_brightness(current)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
-        local notif = naughty.notify({text=notif_text})
+        local notif = naughty.notify({title="Display",text=notif_text})
         notif_id = notif.id
     else
-        naughty.notify({text=notif_text, replaces_id=notif_id})
+        naughty.notify({title="Display",text=notif_text, replaces_id=notif_id})
     end
 end
 
