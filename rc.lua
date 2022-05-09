@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.mauve"
+local theme = require "themes.cat_mauve"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 
