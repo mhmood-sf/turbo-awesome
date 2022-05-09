@@ -13,11 +13,13 @@ local brightness = require "system.brightness"
 
 -- Key bindings
 globalkeys = gears.table.join(
-    -- Volum up/down using amixer
+    -- Volum up/down/mute using amixer
     awful.key({ }, "XF86AudioRaiseVolume", audio.volume_up,
               {description = "Increase volume by 5%", group = "Fn Controls"}),
     awful.key({ }, "XF86AudioLowerVolume", audio.volume_down,
               {description = "Decrease volume by 5%", group = "Fn Controls"}),
+    awful.key({ }, "XF86AudioMute", audio.toggle_mute,
+              {description = "Toggle Mute", group = "Fn Controls"}),
 
     -- Brightness up/down using xrandr
     awful.key({ }, "XF86MonBrightnessUp", brightness.up,
