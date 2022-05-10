@@ -127,6 +127,8 @@ theme.tooltip_border_color = color.black
 -- Hotkeys
 theme.hotkeys_bg = color.alt_black
 theme.hotkeys_fg = color.white
+theme.hotkeys_font = "monospace 9"
+theme.hotkeys_description_font = "monospace 8"
 theme.hotkeys_border_width = 3
 theme.hotkeys_border_color = color.accent
 theme.hotkeys_shape = nil
