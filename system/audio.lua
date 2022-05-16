@@ -24,7 +24,7 @@ local function volume_down()
 
     local notif_text = "Volume: " .. VOLUME .. "%"
     if volume_id == nil then
-        local notif = naughty.notify({text=notif_text})
+        local notif = naughty.notify({title="Audio",text=notif_text})
         volume_id = notif.id
     else
         naughty.notify({title="Audio",text=notif_text, replaces_id=volume_id})
