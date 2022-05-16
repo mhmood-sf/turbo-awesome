@@ -3,11 +3,6 @@ local awful = require "awful"
 local naughty = require "naughty"
 local hotkeys_popup = require "awful.hotkeys_popup"
 
--- TODO: Hmm I'm not sure about this actually, maybe make this a button
--- TODO: on the bar, and the popup appears somewhere 'under' the button
--- TODO: or something like that.
-local dashb = require "cfg.alpha.ui.dashb"
-
 local audio = require "system.audio"
 local brightness = require "system.brightness"
 
@@ -55,10 +50,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "b", function () awful.spawn(browser) end,
               {description = "Open browser", group = "launcher"}),
 
-    -- Open dashboard popup
-    awful.key({ modkey }, "space", dashb,
-              {description = "Dashboard popup", group = "launcher"}),
-
     -- Switch layout
     awful.key({ modkey }, "Tab", function () awful.layout.inc(1) end,
               {description = "Select next layout", group = "layout"}),
@@ -70,15 +61,10 @@ globalkeys = gears.table.join(
               {description = "View next tag", group = "tag"}),
 
     -- Switching through clients
-    awful.key({ modkey }, "w",
-        function () awful.client.focus.byidx(1) end,
-        {description = "Focus next by index", group = "client"}
-    ),
-
-    awful.key({ modkey }, "s",
-        function () awful.client.focus.byidx(-1) end,
-        {description = "Focus previous by index", group = "client"}
-    ),
+    awful.key({ modkey }, "w", function() awful.client.focus.byidx(1) end,
+        {description = "Focus next by index", group = "client"}),
+    awful.key({ modkey }, "s", function() awful.client.focus.byidx(-1) end,
+        {description = "Focus previous by index", group = "client"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift" }, "w", function () awful.client.swap.byidx(1) end,
@@ -143,4 +129,3 @@ end
 
 -- Set keys
 root.keys(globalkeys)
-

@@ -55,7 +55,7 @@ window {
 mainbox {
     padding: 20;
     background-color: var(normal-bg);
-    border: 3 solid 3;
+    border: 2 solid 2;
     border-color: var(main-border);
 }
 
@@ -106,7 +106,7 @@ button selected {
 
 inputbar {
     padding: 0px;
-    spacing: 0px;
+    spacing: 10px;
     text-color: var(normal-fg);
     background-color: var(normal-bg);
     children: [ prompt,entry,overlay ];

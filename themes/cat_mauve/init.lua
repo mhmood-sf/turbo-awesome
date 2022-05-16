@@ -2,10 +2,6 @@ local theme_assets = require "beautiful.theme_assets"
 local xresources = require "beautiful.xresources"
 local dpi = xresources.apply_dpi
 
-local gears = require "gears"
-local gfs = require "gears.filesystem"
-local themes_path = gfs.get_themes_dir()
-
 local HOME = os.getenv("HOME")
 local THEMES = HOME .. "/.config/awesome/themes"
 
@@ -72,7 +68,7 @@ theme.fg_minimize   = color.white
 theme.bg_systray    = color.bg_normal
 
 theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(3)
+theme.border_width  = dpi(2)
 theme.border_normal = color.alt_black
 theme.border_focus  = color.accent
 theme.border_marked = color.prominent
@@ -125,19 +121,19 @@ theme.tooltip_border_width = 0
 theme.tooltip_border_color = color.black
 
 -- Hotkeys
-theme.hotkeys_bg = color.alt_black
+theme.hotkeys_bg = color.black
 theme.hotkeys_fg = color.white
 theme.hotkeys_font = "monospace 9"
 theme.hotkeys_description_font = "monospace 8"
-theme.hotkeys_border_width = 3
+theme.hotkeys_border_width = 2
 theme.hotkeys_border_color = color.accent
 theme.hotkeys_shape = nil
 theme.hotkeys_modifiers_fg = color.grey
 
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
-theme.notification_bg = color.black
-theme.notification_fg = color.accent
+theme.notification_bg = color.alt_black
+theme.notification_fg = color.white
 
 -- Infocus
 theme.infocus_bg = color.bg_focus
@@ -153,19 +149,22 @@ theme.icons = {
         floating = THEMES .. "/cat_mauve/icons/layout/floatingw.png",
     },
     volume = {
-        mute = THEMES .. "cat_mauve/icons/volume/mute.png",
-        high = THEMES .. "cat_mauve/icons/volume/high.png",
-        low  = THEMES .. "cat_mauve/icons/volume/low.png"
+        mute = THEMES .. "/cat_mauve/icons/volume/mute.png",
+        high = THEMES .. "/cat_mauve/icons/volume/high.png",
+        low  = THEMES .. "/cat_mauve/icons/volume/low.png"
     },
     battery = {
-        low      = THEMES .. "cat_mauve/icons/battery/low.png",
-        high     = THEMES .. "cat_mauve/icons/battery/high.png",
-        charging = THEMES .. "cat_mauve/icons/battery/charging.png",
+        low      = THEMES .. "/cat_mauve/icons/battery/low.png",
+        high     = THEMES .. "/cat_mauve/icons/battery/high.png",
+        charging = THEMES .. "/cat_mauve/icons/battery/charging.png",
     },
     system = {
-        cpu  = THEMES .. "cat_mauve/icons/system/cpu.png",
-        mem  = THEMES .. "cat_mauve/icons/system/mem.png",
-        temp = THEMES .. "cat_mauve/icons/system/temp.png",
+        cpu  = THEMES .. "/cat_mauve/icons/system/cpu.png",
+        mem  = THEMES .. "/cat_mauve/icons/system/mem.png",
+        temp = THEMES .. "/cat_mauve/icons/system/temp.png",
+    },
+    misc = {
+        downarrow = THEMES .. "/cat_mauve/icons/downward-arrow.png"
     }
 }
 

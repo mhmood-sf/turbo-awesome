@@ -19,4 +19,3 @@ bg.update = function()
 end
 
 return bg
-

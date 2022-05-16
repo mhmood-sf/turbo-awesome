@@ -2,6 +2,8 @@ local naughty = require "naughty"
 local awful = require "awful"
 local shell = require"utils".shell
 
+local DEFAULT = 200
+
 -- Change this to wherever the backlight file is.
 local backlight = "/sys/class/backlight/intel_backlight/brightness"
 
@@ -23,18 +25,19 @@ local backlight = "/sys/class/backlight/intel_backlight/brightness"
 local sh_script = "~/.config/awesome/system/brightness.sh"
 
 -- Current brightness
-local current = shell("cat " .. backlight)
+local current = DEFAULT
 
 -- Runs the brightness.sh script to set brightness given by val
 local function set_brightness(val)
+    -- Update current's value
+    current = val
     local cmd = "sudo " .. sh_script .. " " .. val .. " " .. backlight
     awful.spawn.with_shell(cmd)
 end
 
 local notif_id
 local function down()
-    current = tostring(tonumber(current) - 50)
-    set_brightness(current)
+    set_brightness(current - 50)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
         local notif = naughty.notify({title="Display",text=notif_text})
@@ -45,8 +48,7 @@ local function down()
 end
 
 local function up()
-    current = tostring(tonumber(current) + 50)
-    set_brightness(current)
+    set_brightness(current + 50)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
         local notif = naughty.notify({title="Display",text=notif_text})
@@ -55,6 +57,9 @@ local function up()
         naughty.notify({title="Display",text=notif_text, replaces_id=notif_id})
     end
 end
+
+-- Set to default on startup.
+set_brightness(DEFAULT)
 
 return {
     up = up,

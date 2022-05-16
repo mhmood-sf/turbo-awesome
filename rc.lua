@@ -8,7 +8,7 @@ local HOME = os.getenv("HOME")
 -- Default modkey
 modkey = "Mod4"
 
--- Terminal: konsol
+-- Terminal: kitty
 terminal = "kitty"
 -- Editor: neovim
 editor = terminal .. " -e " .. HOME .. "/Downloads/neovim/nvim.appimage"
@@ -21,10 +21,12 @@ filemanager = "thunar"
 -- Music player: cmus
 musicplayer = terminal .. " -e " .. "cmus"
 
+-- Run the custom notification stuff.
+--require "notif"
+
 -- Set up global/client bindings
 -- NOTE: Needs to be called first for some reason.
 require "bindings"
 
 -- Delegate everything else to configuration
 require "cfg.alpha"
-
