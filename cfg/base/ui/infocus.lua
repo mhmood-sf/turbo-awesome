@@ -2,6 +2,7 @@ local wibox = require "wibox"
 local beautiful = require "beautiful"
 
 local strip = require"utils".strip
+local constrain = require"utils".constrainStr
 
 -- Client titles seem to be in the form
 -- <window description> - <program name>
@@ -9,7 +10,8 @@ local strip = require"utils".strip
 -- and does its best to return the
 -- <program name> part.
 function extract_name(str)
-    if str == nil then return "[No Title]" end
+    if (str == nil) or (str == "") then return "[No Title]" end
+
     -- There's a lot of different types of hyphens
     -- and different programs seemed to be using
     -- different ones so I just threw all of them in.
@@ -24,7 +26,7 @@ function extract_name(str)
         end
         -- Return the LAST element, which would
         -- be the <program name> part.
-        return strip(lst[#lst])
+        return constrain(strip(lst[#lst]), 30, "right")
     else
         -- If we couldn't parse properly, we just
         -- give up and return the whole title as is.
