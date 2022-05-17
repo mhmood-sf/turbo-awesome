@@ -36,7 +36,7 @@ end
 
 -- Update textbox contents when client comes in focus.
 client.connect_signal("focus", function(c)
-    local infocus = c.screen.elements.infocus
+    local infocus = c.screen.infocus
     if infocus == nil then return end
     local prog_name = " " .. extract_name(c.name) .. " "
     infocus.widget:set_markup_silently(prog_name)
@@ -44,7 +44,7 @@ end)
 
 -- Clear textbox contents on unfocus.
 client.connect_signal("unfocus", function(c)
-    local infocus = c.screen.elements.infocus
+    local infocus = c.screen.infocus
     if infocus == nil then return end
     infocus.widget:set_markup_silently("")
 end)
@@ -61,8 +61,8 @@ return function(s)
     local bg = wibox.container.background(tb, bg_color)
     bg.fg = fg_color
 
-    -- Attach to screen elements
-    s.elements.infocus = bg
-    return s.elements.infocus
+    -- Attach to screen
+    s.infocus = bg
+    return s.infocus
 end
 

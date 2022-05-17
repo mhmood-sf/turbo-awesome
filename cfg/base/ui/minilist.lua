@@ -1,7 +1,7 @@
 local wibox = require "wibox"
 
 function update_minilist(c)
-    local minilist = c.screen.elements.minilist
+    local minilist = c.screen.minilist
     if minilist == nil then return end
 
     -- Sum minimized clients for selected tags.
@@ -18,7 +18,7 @@ end
 
 -- Update when a client is minimized
 client.connect_signal("property::minimized", function(c)
-    local minilist = c.screen.elements.minilist
+    local minilist = c.screen.minilist
     if minilist == nil then return end
 
     -- We need to do it for each tag that the client
@@ -50,8 +50,8 @@ return function(s)
         tb.per_tag[tag.index] = 0
     end
 
-    -- Attach to screen elements and return it.
-    s.elements.minilist = tb
-    return s.elements.minilist
+    -- Attach to screen and return it.
+    s.minilist = tb
+    return s.minilist
 end
 
