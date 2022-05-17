@@ -3,7 +3,7 @@ local gears = require "gears"
 
 local wallpaper = require "cfg.base.ui.wallpaper"
 local bar = require "cfg.alpha.ui.bar"
-local menu = require "cfg.alpha.ui.menu"
+local menu = require "cfg.base.ui.menu"
 
 -- Set up the right-click menu.
 root.buttons(gears.table.join(
