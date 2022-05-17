@@ -1,6 +1,5 @@
 local naughty = require "naughty"
 local awful = require "awful"
-local shell = require"utils".shell
 
 local DEFAULT = 200
 

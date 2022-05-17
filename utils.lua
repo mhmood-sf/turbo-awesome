@@ -1,5 +1,3 @@
--- Useful lua functions
-
 -- Remove leading/trailing whitespace
 local function strip(str)
     return string.match(str, "^%s*(.-)%s*$")
@@ -13,22 +11,6 @@ local function split(str, sep)
         table.insert(lst, i)
     end
     return lst
-end
-
--- Returns shell command output, or fallback if
--- command fails.
--- TODO: See https://awesomewm.org/doc/api/libraries/awful.spawn.html
--- TODO: Using io.popen is not recommended.
-local function shell(cmd, fallback)
-    local handle = io.popen(cmd)
-    local output = handle:read("*a")
-    handle:close()
-
-    if output == nil then
-        return fallback
-    else
-        return strip(output)
-    end
 end
 
 -- Sets upper/lower limits for a given number
