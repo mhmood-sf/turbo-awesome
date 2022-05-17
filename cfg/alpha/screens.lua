@@ -1,7 +1,14 @@
 local awful = require "awful"
+local gears = require "gears"
 
 local wallpaper = require "cfg.base.ui.wallpaper"
 local bar = require "cfg.alpha.ui.bar"
+local menu = require "cfg.alpha.ui.menu"
+
+-- Set up the right-click menu.
+root.buttons(gears.table.join(
+    awful.button({ }, 3, function() menu:toggle() end)
+))
 
 awful.screen.connect_for_each_screen(function(s)
     -- Set wallpaper
@@ -11,7 +18,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- and let them share data if needed.
     s.elements = {}
 
-    -- Sets up statusbar and everything.
+    -- Sets up the wibar.
     bar(s)
 end)
-

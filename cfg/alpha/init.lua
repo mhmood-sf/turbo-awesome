@@ -37,4 +37,3 @@ require "cfg.alpha.rules"
 
 -- Set up extra signals and stuff
 require "cfg.alpha.signals"
-
