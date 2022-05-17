@@ -163,8 +163,15 @@ theme.icons = {
         mem  = THEMES .. "/cat_mauve/icons/system/mem.png",
         temp = THEMES .. "/cat_mauve/icons/system/temp.png",
     },
-    misc = {
-        downarrow = THEMES .. "/cat_mauve/icons/downward-arrow.png"
+    apps = {
+        browser = THEMES .. "/cat_mauve/icons/apps/firefox.png",
+        terminal = THEMES .. "/cat_mauve/icons/apps/terminal.png",
+        filemanager = THEMES .. "/cat_mauve/icons/apps/folder.png",
+        musicplayer = THEMES .. "/cat_mauve/icons/apps/music.png"
+    },
+    interface = {
+        shutdown = THEMES .. "/cat_mauve/icons/interface/shutdown.png",
+        reboot = THEMES .. "/cat_mauve/icons/interface/reboot.png"
     }
 }
 
@@ -174,4 +181,3 @@ theme.layout_spiral   = theme.icons.layout.spiral
 theme.rofi = THEMES .. "/cat_mauve/cat_mauve.rasi"
 
 return theme
-
