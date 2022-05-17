@@ -30,11 +30,33 @@ local tray = wibox.widget {
     basetray
 }
 
+--local clock = awful.widget.textclock()
+local clock = wibox.widget {
+    widget = wibox.container.background,
+    fg = beautiful.colors.white,
+    {
+        widget = wibox.widget.textclock,
+        format = "%H:%M",
+        font = "Cascadia Code PL Semibold 10",
+        valign = "center"
+    }
+}
+
+
 return function(s)
     awful.wibar({ position = "top", screen = s }):setup {
         layout = wibox.layout.flex.horizontal,
         taglist(s),
-        minilist(s),
+        {
+            widget = wibox.container.place,
+            halign = "center",
+            {
+                layout = wibox.layout.fixed.horizontal,
+                spacing = 10,
+                clock,
+                minilist(s),
+            }
+        },
         {
             widget = wibox.container.place,
             halign = "right",
