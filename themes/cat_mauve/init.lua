@@ -149,9 +149,10 @@ theme.icons = {
         floating = THEMES .. "/cat_mauve/icons/layout/floatingw.png",
     },
     volume = {
-        mute = THEMES .. "/cat_mauve/icons/volume/mute.png",
-        high = THEMES .. "/cat_mauve/icons/volume/high.png",
-        low  = THEMES .. "/cat_mauve/icons/volume/low.png"
+        mute   = THEMES .. "/cat_mauve/icons/volume/mute.png",
+        high   = THEMES .. "/cat_mauve/icons/volume/high.png",
+        medium = THEMES .. "/cat_mauve/icons/volume/medium.png",
+        low    = THEMES .. "/cat_mauve/icons/volume/low.png"
     },
     battery = {
         low      = THEMES .. "/cat_mauve/icons/battery/low.png",
