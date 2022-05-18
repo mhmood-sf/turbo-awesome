@@ -50,11 +50,21 @@ local function constrainStr(str, size, align)
     end
 end
 
+-- Creates a new table (values are copied over shallowly)
+-- that includes key/values from both tables A and B.
+-- If they have the same keys, then B overwrites A.
+local function mergeTables(A, B)
+    local tmp = {}
+    for k, v in pairs(A) do tmp[k] = v end
+    for k, v in pairs(B) do tmp[k] = v end
+    return tmp
+end
+
 return {
-    shell = shell,
     split = split,
     strip = strip,
     constrainStr = constrainStr,
-    constrainNum = constrainNum
+    constrainNum = constrainNum,
+    mergeTables = mergeTables
 }
 
