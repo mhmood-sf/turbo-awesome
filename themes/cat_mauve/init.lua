@@ -1,4 +1,5 @@
 local theme_assets = require "beautiful.theme_assets"
+local gears = require "gears"
 local xresources = require "beautiful.xresources"
 local dpi = xresources.apply_dpi
 
@@ -114,12 +115,6 @@ theme.titlebar_fg_normal = color.fg_normal
 theme.titlebar_bg_focus = color.bg_focus
 theme.titlebar_fg_focus = color.fg_focus
 
--- Tooltip
-theme.tooltip_font = "Cascadia Code PL 9"
-theme.tooltip_opacity = 1.0
-theme.tooltip_border_width = 0
-theme.tooltip_border_color = color.black
-
 -- Hotkeys
 theme.hotkeys_bg = color.black
 theme.hotkeys_fg = color.white
@@ -130,10 +125,18 @@ theme.hotkeys_border_color = color.accent
 theme.hotkeys_shape = nil
 theme.hotkeys_modifiers_fg = color.grey
 
+-- Menu
+theme.menu_bg_focus = color.alt_black
+theme.menu_fg_focus = color.white
+
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
-theme.notification_bg = color.alt_black
-theme.notification_fg = color.white
+theme.notification_bg = color.prominent
+theme.notification_fg = color.alt_black
+theme.notification_error_bg = color.red
+theme.notification_error_fg = color.alt_black
+theme.notification_border_width = 0
+theme.notification_margin = 10
 
 -- Infocus
 theme.infocus_bg = color.bg_focus
@@ -143,37 +146,51 @@ theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 -- Source: https://github.com/catppuccin/wallpapers/blob/main/mandelbrot/mandelbrot_full_magenta.png
 theme.wallpaper = THEMES .. "/cat_mauve/cat_pacman.png"
 
+-- TODO: Rename ALL icons to follow the following format:
+-- TODO: <namespace>-<modifiers>-<"fill"|"no-fill">-<"light"-"dark"-"color">.<"png"|"svg">
 theme.icons = {
+
     layout = {
         spiral   = THEMES .. "/cat_mauve/icons/layout/spiralw.png",
         floating = THEMES .. "/cat_mauve/icons/layout/floatingw.png",
     },
-    volume = {
-        mute   = THEMES .. "/cat_mauve/icons/volume/mute.png",
-        high   = THEMES .. "/cat_mauve/icons/volume/high.png",
-        medium = THEMES .. "/cat_mauve/icons/volume/medium.png",
-        low    = THEMES .. "/cat_mauve/icons/volume/low.png"
-    },
-    battery = {
-        low      = THEMES .. "/cat_mauve/icons/battery/low.png",
-        high     = THEMES .. "/cat_mauve/icons/battery/high.png",
-        charging = THEMES .. "/cat_mauve/icons/battery/charging.png",
-    },
-    system = {
-        cpu  = THEMES .. "/cat_mauve/icons/system/cpu.png",
-        mem  = THEMES .. "/cat_mauve/icons/system/mem.png",
-        temp = THEMES .. "/cat_mauve/icons/system/temp.png",
-    },
+
     apps = {
-        browser = THEMES .. "/cat_mauve/icons/apps/firefox.png",
-        terminal = THEMES .. "/cat_mauve/icons/apps/terminal.png",
-        filemanager = THEMES .. "/cat_mauve/icons/apps/folder.png",
-        musicplayer = THEMES .. "/cat_mauve/icons/apps/music.png"
+        browser = THEMES .. "/cat_mauve/icons/apps/firefox-fill-light.png",
+        terminal = THEMES .. "/cat_mauve/icons/apps/terminal-window-fill-light.png",
+        filemanager = THEMES .. "/cat_mauve/icons/system/folders-fill-light.png",
+        musicplayer = THEMES .. "/cat_mauve/icons/apps/headphones-fill-light.png"
     },
-    interface = {
-        shutdown = THEMES .. "/cat_mauve/icons/interface/shutdown.png",
-        reboot = THEMES .. "/cat_mauve/icons/interface/reboot.png"
-    }
+
+    system = {
+        cpu  = THEMES .. "/cat_mauve/icons/system/gauge.png",
+        mem  = THEMES .. "/cat_mauve/icons/system/cpu.png",
+        temp = THEMES .. "/cat_mauve/icons/system/thermometer-simple.png",
+
+        audio = {
+            mute   = THEMES .. "/cat_mauve/icons/system/speaker-x.png",
+            high   = THEMES .. "/cat_mauve/icons/system/speaker-high.png",
+            medium = THEMES .. "/cat_mauve/icons/system/speaker-low.png",
+            low    = THEMES .. "/cat_mauve/icons/system/speaker-none.png",
+        },
+
+        brightness = {
+            high   = THEMES .. "/cat_mauve/icons/system/sun.png",
+            low    = THEMES .. "/cat_mauve/icons/system/sun-dim.png",
+        },
+
+        battery = {
+            low      = THEMES .. "/cat_mauve/icons/system/battery-low.png",
+            high     = THEMES .. "/cat_mauve/icons/system/battery-high.png",
+            charging = THEMES .. "/cat_mauve/icons/system/battery-charging.png",
+        },
+
+        interface = {
+            shutdown = THEMES .. "/cat_mauve/icons/system/power-fill-light.png",
+            reboot = THEMES .. "/cat_mauve/icons/system/arrow-clockwise-fill-light.png"
+        }
+    },
+
 }
 
 theme.layout_floating = theme.icons.layout.floating

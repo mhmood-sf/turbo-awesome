@@ -11,11 +11,14 @@ local menu = awful.menu({
         { "Browser", browser, beautiful.icons.apps.browser },
         { "Files", filemanager, beautiful.icons.apps.filemanager },
         { "Music", musicplayer, beautiful.icons.apps.musicplayer},
-        { "Quit", "sudo shutdown 5s", beautiful.icons.interface.shutdown },
+        -- Shutdown in about 5 seconds.
+        { "Quit", "sudo shutdown now", beautiful.icons.system.interface.shutdown },
+        -- Reboot
+        { "Reboot", "sudo shutdown -r", beautiful.icons.system.interface.reboot }
     },
     theme = {
-        width = 125,
-        height = 20
+        width = beautiful.menu_width or 150,
+        height = beautiful.menu_height or 25
     }
 })
 
