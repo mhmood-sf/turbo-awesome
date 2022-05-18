@@ -1,6 +1,7 @@
-local naughty = require "naughty"
+local notif = require "notif"
 local awful = require "awful"
 
+-- TODO: Add icons to notifications.
 local DEFAULT = 200
 
 -- Change this to wherever the backlight file is.
@@ -39,10 +40,9 @@ local function down()
     set_brightness(current - 50)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
-        local notif = naughty.notify({title="Display",text=notif_text})
-        notif_id = notif.id
+        notif_id = notif.info("Display", notif_text).id
     else
-        naughty.notify({title="Display",text=notif_text, replaces_id=notif_id})
+        notif.info("Display", notif_text, { replaces_id = notif_id })
     end
 end
 
@@ -50,10 +50,9 @@ local function up()
     set_brightness(current + 50)
     local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
     if notif_id == nil then
-        local notif = naughty.notify({title="Display",text=notif_text})
-        notif_id = notif.id
+        notif_id = notif.info("Display", notif_text).id
     else
-        naughty.notify({title="Display",text=notif_text, replaces_id=notif_id})
+        notif.info("Display", notif_text, { replaces_id = notif_id })
     end
 end
 

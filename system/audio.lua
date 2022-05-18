@@ -1,4 +1,4 @@
-local naughty = require "naughty"
+local notif = require "notif"
 local awful = require "awful"
 local beautiful = require "beautiful"
 local gears = require "gears"
@@ -13,34 +13,25 @@ local function send_notif(from_toggle_mute)
 
     -- If audio is being muted then use the mute icon.
     if from_toggle_mute and muted then
-        icon = beautiful.icons.volume.mute
+        icon = beautiful.icons.system.audio.mute
         text = "Muted"
     else
         -- Otherwise just show the current volume and
         -- appropriate icon.
         text = "Volume: " .. current .. "%"
         if current >= 75 then
-            icon = beautiful.icons.volume.high
+            icon = beautiful.icons.system.audio.high
         elseif current >= 25 and current < 75 then
-            icon = beautiful.icons.volume.medium
+            icon = beautiful.icons.system.audio.medium
         else
-            icon = beautiful.icons.volume.low
+            icon = beautiful.icons.system.audio.low
         end
     end
 
     -- Send notification and update notif_id
-    notif_id = naughty.notify({
-        title = "Audio",
-        text = text,
+    notif_id = notif.info("Audio", text, {
         icon = icon,
         icon_size = 35,
-        -- TODO: Get light icons, and invert the colors so that bg = black, fg =
-        -- accent, border_color = accent
-        bg = beautiful.colors.accent,
-        fg = beautiful.colors.black,
-        border_width = 2,
-        border_color = beautiful.colors.alt_black,
-        shape = function(cr, x, y) return gears.shape.rounded_rect(cr, x, y, 5) end,
         replaces_id = notif_id
     }).id
 end
@@ -86,4 +77,3 @@ return {
     volume_down = volume_down,
     toggle_mute = toggle_mute
 }
-
