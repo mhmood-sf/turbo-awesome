@@ -1,11 +1,6 @@
 local notif = require "notif"
 local awful = require "awful"
-
--- TODO: Add icons to notifications.
-local DEFAULT = 200
-
--- Change this to wherever the backlight file is.
-local backlight = "/sys/class/backlight/intel_backlight/brightness"
+local beautiful = require "beautiful"
 
 -- This script is run with sudo since it edits the file
 -- above. So, this needs to be executable WITHOUT
@@ -24,36 +19,52 @@ local backlight = "/sys/class/backlight/intel_backlight/brightness"
 -- `<user> ALL=(root) NOPASSWD: /home/<user>/.config/awesome/system/brightness.sh`
 local sh_script = "~/.config/awesome/system/brightness.sh"
 
--- Current brightness
+local DEFAULT = 200
 local current = DEFAULT
+local backlight = "/sys/class/backlight/intel_backlight/brightness"
+local notif_id
+
+local function send_notif()
+    local text = "Brightness: " .. (tonumber(current) / 10) .. "%"
+
+    local icon
+    if current > 500 then
+        icon = beautiful.icons.system.brightness.high
+    else
+        icon = beautiful.icons.system.brightness.low
+    end
+
+    -- Send notification and update notif_id
+    notif_id = notif.info("Display", text, {
+        icon = icon,
+        icon_size = 35,
+        replaces_id = notif_id
+    }).id
+end
 
 -- Runs the brightness.sh script to set brightness given by val
 local function set_brightness(val)
     -- Update current's value
-    current = val
+    if val < 0 then
+        current = 0
+    elseif val > 1000 then
+        current = 1000
+    else
+        current = val
+    end
+
     local cmd = "sudo " .. sh_script .. " " .. val .. " " .. backlight
     awful.spawn.with_shell(cmd)
 end
 
-local notif_id
 local function down()
     set_brightness(current - 50)
-    local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
-    if notif_id == nil then
-        notif_id = notif.info("Display", notif_text).id
-    else
-        notif.info("Display", notif_text, { replaces_id = notif_id })
-    end
+    send_notif()
 end
 
 local function up()
     set_brightness(current + 50)
-    local notif_text = "Brightness: " .. (tonumber(current) / 10) .. "%"
-    if notif_id == nil then
-        notif_id = notif.info("Display", notif_text).id
-    else
-        notif.info("Display", notif_text, { replaces_id = notif_id })
-    end
+    send_notif()
 end
 
 -- Set to default on startup.

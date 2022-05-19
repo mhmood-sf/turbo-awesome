@@ -38,7 +38,14 @@ end
 
 -- Calls amixer command to set Master volume to val.
 local function set_volume(val)
-    current = val
+    if val < 0 then
+        current = 0
+    elseif val > 100 then
+        current = 100
+    else
+        current = val
+    end
+
     awful.spawn("amixer set Master " .. val .. "%")
 end
 
