@@ -23,6 +23,8 @@ end
 
 -- Update textbox when client's name changes.
 client.connect_signal("property::name", function(c)
+    -- In case the signal is fired for an unfocused client.
+    if c ~= client.focus then return end
     local name = " " .. extract_name(c.name) .. " "
     set_text(c, name)
 end)
