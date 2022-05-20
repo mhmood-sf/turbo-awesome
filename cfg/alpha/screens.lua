@@ -7,7 +7,8 @@ local menu = require "cfg.base.ui.menu"
 
 -- Set up the right-click menu.
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function() menu:toggle() end)
+    awful.button({ }, 3, function() menu:toggle() end),
+    awful.button({ }, 1, function() menu:hide() end)
 ))
 
 awful.screen.connect_for_each_screen(function(s)
