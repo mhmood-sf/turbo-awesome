@@ -20,6 +20,10 @@ launcher = "rofi -show drun -theme " .. theme.rofi
 filemanager = "thunar"
 -- Music player: cmus
 musicplayer = terminal .. " -e " .. "cmus"
+-- Office
+office = HOME .. "/Downloads/OnlyOffice/DesktopEditors-x86_64.AppImage"
+-- Obsidian
+obsidian = HOME .. "/Downloads/obsidian/Obsidian-0.13.23.AppImage"
 
 -- Run the custom notification stuff.
 --require "notif"

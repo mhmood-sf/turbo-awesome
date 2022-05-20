@@ -157,6 +157,7 @@ theme.icons = {
 
     apps = {
         browser = THEMES .. "/cat_mauve/icons/apps/firefox-fill-light.png",
+        obsidian = THEMES .. "/cat_mauve/icons/apps/obsidian.png",
         terminal = THEMES .. "/cat_mauve/icons/apps/terminal-window-fill-light.png",
         filemanager = THEMES .. "/cat_mauve/icons/system/folders-fill-light.png",
         musicplayer = THEMES .. "/cat_mauve/icons/apps/headphones-fill-light.png"

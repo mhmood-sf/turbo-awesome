@@ -9,6 +9,8 @@ local menu = awful.menu({
         -- password prompt.
         { "Terminal", terminal, beautiful.icons.apps.terminal },
         { "Browser", browser, beautiful.icons.apps.browser },
+        { "Office", office, beautiful.icons.apps.office },
+        { "Obsidian", obsidian, beautiful.icons.apps.obsidian },
         { "Files", filemanager, beautiful.icons.apps.filemanager },
         { "Music", musicplayer, beautiful.icons.apps.musicplayer},
         -- Shutdown in about 5 seconds.
