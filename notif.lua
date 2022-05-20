@@ -7,16 +7,13 @@ local xresources = require "beautiful.xresources"
 local merge = require"utils".mergeTables
 local dpi = xresources.apply_dpi
 
--- Defaults for notification opts. Note that some
--- fields (like text/title/screen) are commented
--- out but still kept for completeness.
 local default_opts = {
 --  text           = "",
 --  title          = "",
-    timeout        = 5,
+    timeout        = beautiful.notification_timeout or 5,
 --  hover_timeout  = 0,
 --  screen         = 0,
-    position       = "bottom_right",
+    position       = beautiful.notification_position or "bottom_right",
     ontop          = true,
 --  height         = "auto" -- Is "auto" a valid value?
 --  width          = "auto" -- Is "auto" a valid value?
@@ -42,24 +39,28 @@ local default_opts = {
 }
 
 local error_opts = merge(default_opts, {
-    bg      = beautiful.notification_error_bg or beautiful.colors.red or "#ff0000",
-    fg      = beautiful.notification_error_fg or beautiful.colors.black or "#ffffff",
-    border_color = beautiful.notification_error_border_color or beautiful.colors.alt_black or "#ffffff",
-    timeout = 0
+    timeout = 0,
+    bg      = beautiful.notification_error_bg or "#ff0000",
+    fg      = beautiful.notification_error_fg or "#ffffff",
+    border_color = beautiful.notification_error_border_color or "#ffffff"
 })
 
--- Fires a "normal" notification, opts is optional,
--- returns the resulting notification table.
+-- Default naughty configuration.
+naughty.config = {
+    padding = beautiful.notification_padding or dpi(10),
+    spacing = beautiful.notification_spacing or dpi(10),
+    defaults = default_opts,
+    presets = {
+        low = default_opts,
+        normal = default_opts,
+        critical = error_opts
+    }
+}
+
 function info(title, text, overrides)
-    -- Set args to overrides or empty table if there
-    -- are no overrides.
     args = overrides or {}
-    -- Add default preset to args.
-    args.preset = default_opts
-    -- Now add title.text to args (overriding previous values)
     args.title = title
     args.text = text
-
     return naughty.notify(args)
 end
 
@@ -68,7 +69,6 @@ function error(title, text, overrides)
     args.preset = error_opts
     args.title = title
     args.text = text
-
     return naughty.notify(args)
 end
 
