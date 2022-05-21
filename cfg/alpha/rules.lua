@@ -16,4 +16,3 @@ awful.rules.rules = {
      }
     }
 }
-
