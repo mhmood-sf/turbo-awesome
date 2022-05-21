@@ -99,6 +99,11 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, color.white
 )
 
+-- Titlebar
+theme.titlebar_quit_color = color.red
+theme.titlebar_maximize_color = color.blue
+theme.titlebar_minimize_color = color.orange
+
 -- Tasklist
 theme.tasklist_bg_focus = color.bg_focus
 theme.tasklist_fg_focus = color.fg_focus
@@ -160,7 +165,8 @@ theme.icons = {
         obsidian = THEMES .. "/cat_mauve/icons/apps/obsidian.png",
         terminal = THEMES .. "/cat_mauve/icons/apps/terminal-window-fill-light.png",
         filemanager = THEMES .. "/cat_mauve/icons/system/folders-fill-light.png",
-        musicplayer = THEMES .. "/cat_mauve/icons/apps/headphones-fill-light.png"
+        musicplayer = THEMES .. "/cat_mauve/icons/apps/headphones-fill-light.png",
+        office = THEMES .. "/cat_mauve/icons/apps/stack-fill-light.png"
     },
 
     system = {
