@@ -77,7 +77,7 @@ return function(variant)
     theme.notification_margin = 10
 
     -- Infocus
-    theme.infocus_bg = color.bg_normal
+    theme.infocus_bg = color.grey
     theme.infocus_fg = color.fg_normal
     theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 

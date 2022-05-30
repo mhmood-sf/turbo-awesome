@@ -2,7 +2,7 @@ local awful = require "awful"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
 
---local infocus  = require "cfg.base.ui.infocus"
+local infocus  = require "cfg.base.ui.infocus"
 local basetray = require "cfg.base.ui.tray"
 local minilist = require "cfg.base.ui.minilist"
 
@@ -14,7 +14,7 @@ layoutbox.forced_width = 20
 
 local layout = wibox.widget {
     widget = wibox.container.background,
-    bg = beautiful.colors.alt_black,
+    bg = beautiful.bg_normal,
     forced_height = 30,
     forced_width = 30,
     {
@@ -34,7 +34,8 @@ local tray = wibox.widget {
 --local clock = awful.widget.textclock()
 local clock = wibox.widget {
     widget = wibox.container.background,
-    fg = beautiful.colors.white,
+    fg = beautiful.fg_normal,
+    bg = beautiful.bg_normal,
     {
         widget = wibox.widget.textclock,
         format = "%H:%M",
@@ -65,7 +66,7 @@ return function(s)
             {
                 layout = wibox.layout.fixed.horizontal,
                 tray,
---                infocus(s),
+                infocus(s),
                 layout
             },
         }
