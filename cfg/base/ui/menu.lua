@@ -16,7 +16,7 @@ local menu = awful.menu({
         -- Shutdown in about 5 seconds.
         { "Quit", "sudo shutdown now", beautiful.icons.system.interface.shutdown },
         -- Reboot
-        { "Reboot", "sudo shutdown -r", beautiful.icons.system.interface.reboot }
+        { "Reboot", "sudo shutdown -r now", beautiful.icons.system.interface.reboot }
     },
     theme = {
         width = beautiful.menu_width or 150,

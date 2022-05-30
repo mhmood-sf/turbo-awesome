@@ -1,10 +1,19 @@
 local gears = require "gears"
 local awful = require "awful"
 local naughty = require "naughty"
-local hotkeys_popup = require "awful.hotkeys_popup"
 
 local audio = require "system.audio"
 local brightness = require "system.brightness"
+
+local test = require "test"
+
+local function toggle_wibar()
+    if test.bar.target == 1 then
+        test.bar.target = 0
+    else
+        test.bar.target = 1
+    end
+end
 
 -- Key bindings
 globalkeys = gears.table.join(
@@ -22,9 +31,8 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessDown", brightness.down,
               {description = "Decrease brightness by 5%", group = "Fn Controls"}),
 
-    -- Help popup
-    awful.key({ modkey }, "h", hotkeys_popup.show_help,
-              {description = "Show help", group="awesome"}),
+    awful.key({ modkey }, "space", function() toggle_wibar() end,
+              {description = "Toggle wibar position", group = "Dashboard"}),
 
     -- Open terminal
     awful.key({ modkey }, "t", function() awful.spawn(terminal) end,
@@ -94,7 +102,9 @@ globalkeys = gears.table.join(
 
     -- Controls
     awful.key({ modkey, "Control" }, "r", awesome.restart,
-              {description = "Reload awesome", group = "awesome"})
+              {description = "Reload awesome", group = "Controls"}),
+    awful.key({ modkey, "Control" }, "s", function() awful.spawn(screenshot) end,
+              {description = "Screenshot", group = "Controls"})
 )
 
 -- Bind all key numbers to tags.

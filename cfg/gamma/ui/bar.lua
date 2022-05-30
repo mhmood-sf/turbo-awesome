@@ -2,11 +2,11 @@ local awful = require "awful"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
 
-local infocus  = require "cfg.base.ui.infocus"
+--local infocus  = require "cfg.base.ui.infocus"
 local basetray = require "cfg.base.ui.tray"
 local minilist = require "cfg.base.ui.minilist"
 
-local taglist  = require "cfg.alpha.ui.taglist"
+local taglist  = require "cfg.gamma.ui.taglist"
 
 local layoutbox = awful.widget.layoutbox()
 layoutbox.forced_height = 20
@@ -65,7 +65,7 @@ return function(s)
             {
                 layout = wibox.layout.fixed.horizontal,
                 tray,
-                infocus(s),
+--                infocus(s),
                 layout
             },
         }
