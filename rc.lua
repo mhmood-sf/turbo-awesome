@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.cat_mauve"
+local theme = require "themes.catppuccin.mocha"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 
@@ -24,6 +24,8 @@ musicplayer = terminal .. " -e " .. "cmus"
 office = HOME .. "/Downloads/OnlyOffice/DesktopEditors-x86_64.AppImage"
 -- Obsidian
 obsidian = HOME .. "/Downloads/obsidian/Obsidian-0.13.23.AppImage"
+-- Screenshot command
+screenshot = "flameshot gui"
 
 -- Run the custom notification stuff.
 --require "notif"
@@ -33,4 +35,4 @@ obsidian = HOME .. "/Downloads/obsidian/Obsidian-0.13.23.AppImage"
 require "bindings"
 
 -- Delegate everything else to configuration
-require "cfg.alpha"
+require "cfg.gamma"
