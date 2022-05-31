@@ -44,9 +44,14 @@ local clock = wibox.widget {
     }
 }
 
-
 return function(s)
-    s.elements.bar = awful.wibar({ position = "top", screen = s })
+    s.elements.bar = awful.wibar({
+        position = "top",
+        screen = s,
+        ontop = false,
+        bg = (beautiful.wibar_bg_normal or beautiful.bg_normal or "#00000000")
+    })
+
     s.elements.bar:setup {
         layout = wibox.layout.flex.horizontal,
         taglist(s),

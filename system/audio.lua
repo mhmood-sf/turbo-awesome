@@ -1,9 +1,9 @@
-local notif = require "notif"
+local notif = require "notifs"
 local awful = require "awful"
 local beautiful = require "beautiful"
 local gears = require "gears"
 
-local DEFAULT = 30
+local DEFAULT = 50
 local current = DEFAULT
 local muted = false
 local notif_id

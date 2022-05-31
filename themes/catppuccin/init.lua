@@ -44,6 +44,9 @@ return function(variant)
     theme.border_focus  = color.accent
     theme.border_marked = color.prominent
 
+    -- Wibar
+    theme.wibar_bg_normal = color.bg_normal
+
     -- Taglist
     theme.taglist_font = "Cascadia Code PL 11"
 
@@ -136,7 +139,7 @@ return function(variant)
     theme.layout_floating = theme.icons.layout.floating
     theme.layout_spiral   = theme.icons.layout.spiral
 
-    theme.rofi = THEMES .. "/catppuccin/catppuccin.rasi"
+    theme.rofi = THEMES .. "/catppuccin/misc/rofi.rasi"
 
     return theme
 end

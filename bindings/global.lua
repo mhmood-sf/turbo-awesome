@@ -38,10 +38,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "t", function() awful.spawn(terminal) end,
               {description = "Open a terminal", group = "launcher"}),
 
-    -- Open nvim
-    awful.key({ modkey }, "n", function() awful.spawn(editor) end,
-              {description = "Open nvim", group = "launcher"}),
-
     -- Open music player
     awful.key({ modkey }, "m", function() awful.spawn(musicplayer) end,
               {description = "Open music player", group = "launcher"}),

@@ -1,5 +1,5 @@
 local awful = require "awful"
-local constrain = require"utils".constrainNum
+local constrain = require"utils.misc".constrainNum
 
 -- Default nightlight setting, a number
 -- from 1 (warmest) to 10 (coldest).

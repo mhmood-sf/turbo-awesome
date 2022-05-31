@@ -4,7 +4,7 @@ local naughty = require "naughty"
 local beautiful = require "beautiful"
 local xresources = require "beautiful.xresources"
 
-local merge = require"utils".mergeTables
+local merge = require"utils.misc".mergeTables
 local dpi = xresources.apply_dpi
 
 local default_opts = {

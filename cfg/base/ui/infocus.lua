@@ -1,8 +1,8 @@
 local wibox = require "wibox"
 local beautiful = require "beautiful"
 
-local strip = require"utils".strip
-local constrain = require"utils".constrainStr
+local strip = require"utils.misc".strip
+local constrain = require"utils.misc".constrainStr
 
 -- Limit name length and check for empty names.
 function extract_name(str)

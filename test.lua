@@ -1,5 +1,5 @@
 local r = require "lib.rubato"
-local constrain = require"utils".constrainNum
+local constrain = require"utils.misc".constrainNum
 
 local bar = r.timed {
     intro = 0.2,

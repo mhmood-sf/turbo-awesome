@@ -1,4 +1,4 @@
-local notif = require "notif"
+local notif = require "notifs"
 local awful = require "awful"
 local beautiful = require "beautiful"
 

@@ -2,7 +2,7 @@
 require("awful.autofocus")
 
 -- Notification library
-local notify = require("notif")
+local notify = require "notifs"
 
 -- Error handling
 -- Check if awesome encountered an error during startup and fell back to

@@ -1,5 +1,7 @@
 local awful = require "awful"
+local wibox = require "wibox"
 local beautiful = require "beautiful"
+local gears = require "gears"
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -11,7 +13,6 @@ client.connect_signal("manage", function (c)
     end
 
 end)
-
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
