@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.catppuccin.mocha"
+local theme = require "themes.dracula"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 
@@ -12,7 +12,7 @@ modkey = "Mod4"
 terminal = "kitty"
 
 -- Browser: firefox
-browser = "firefox"
+browser = HOME .. "/Downloads/firefox/firefox"
 
 -- Launcher: rofi
 launcher = "rofi -show drun -theme " .. theme.rofi

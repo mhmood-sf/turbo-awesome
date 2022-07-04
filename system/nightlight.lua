@@ -23,9 +23,8 @@ local gammas = {
 -- val is from 1 to 10
 local function set_gamma(val)
     local cmd = ""
-    cmd = cmd .. "xrandr --output " .. OUTPUT
-    cmd = cmd .. " --brightness " .. BRIGHTNESS
-    cmd = cmd .. " --gamma " .. constrain(gammas[val], 1, 10)
+    cmd = cmd .. "xrandr --output " .. DISPLAY_OUTPUT
+    cmd = cmd .. " --gamma " .. gammas[constrain(val, 1, 10)]
     awful.spawn(cmd)
 end
 
@@ -36,6 +35,8 @@ end
 local function decrease_warmth()
     set_gamma(DEFAULT_GAMMA - 1)
 end
+
+set_gamma(DEFAULT_GAMMA)
 
 return {
     set_gamma,

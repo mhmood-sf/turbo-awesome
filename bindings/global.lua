@@ -31,9 +31,6 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessDown", brightness.down,
               {description = "Decrease brightness by 5%", group = "Fn Controls"}),
 
-    awful.key({ modkey }, "space", function() toggle_wibar() end,
-              {description = "Toggle wibar position", group = "Dashboard"}),
-
     -- Open terminal
     awful.key({ modkey }, "t", function() awful.spawn(terminal) end,
               {description = "Open a terminal", group = "launcher"}),
