@@ -13,7 +13,7 @@ return function(variant)
     theme.colors = variant
 
     -- ACCENT
-    theme.colors.accent = theme.colors.blue
+    theme.colors.accent = theme.colors.purple
     theme.colors.prominent = theme.colors.orange
 
     theme.colors.bg_normal = theme.colors.bg
@@ -38,7 +38,7 @@ return function(variant)
 
     theme.bg_systray    = color.bg_normal
 
-    theme.useless_gap   = dpi(5)
+    theme.useless_gap   = dpi(3)
     theme.border_width  = dpi(2)
     theme.border_normal = color.grey
     theme.border_focus  = color.accent
@@ -54,10 +54,10 @@ return function(variant)
     theme.taglist_fg_focus = color.accent
 
     theme.taglist_bg_occupied = color.bg_normal
-    theme.taglist_fg_occupied = color.fg_normal
+    theme.taglist_fg_occupied = color.overlay1
 
     theme.taglist_bg_empty = color.bg_normal
-    theme.taglist_fg_empty = color.grey
+    theme.taglist_fg_empty = color.surface0
 
     theme.taglist_bg_urgent = color.bg_normal
     theme.taglist_fg_urgent = color.fg_error
@@ -85,7 +85,7 @@ return function(variant)
     theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 
     -- Source: https://github.com/catppuccin/wallpapers/blob/main/mandelbrot/mandelbrot_full_magenta.png
-    theme.wallpaper = THEMES .. "/catppuccin/cat_pacman.png"
+    theme.wallpaper = THEMES .. "/catppuccin/wallpaper.png"
 
     -- TODO: Rename ALL icons to follow the following format:
     -- TODO: <namespace>-<modifiers>-<"fill"|"no-fill">-<"light"-"dark"-"color">.<"png"|"svg">

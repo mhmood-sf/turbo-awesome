@@ -3,47 +3,40 @@
  * Rofi version: 1.5.4
  **/
 * {
-    color-flamingo:  #F2CDCD;
-    color-mauve:     #DDB6F2;
-    color-pink:      #F5C2E7;
-    color-maroon:    #E8A2AF;
-    color-red:       #F28FAD;
-    color-peach:     #F8BD96;
-    color-yellow:    #FAE3B0;
-    color-green:     #ABE9B3;
-    color-teal:      #B5E8E0;
-    color-blue:      #96CDFB;
-    color-sky:       #89DCEB;
-    color-black-0:   #161320;
-    color-black-4:   #575268;
-    color-gray-0:    #6E6C7E;
-    color-gray-2:    #C3BAC6;
-    color-white:     #D9E0EE;
-    color-lavender:  #C9CBFF;
-    color-rosewater: #F5E0DC;
+    color-red:       #f7768e;
+    color-grey:      #7dcfff;
+    color-cyan:      #6272a4;
+    color-purple:    #bb9af7;
+    color-black:     #1a1b26;
+    color-green:     #73daca;
+    color-white:     #c0caf5;
+    color-yellow:    #e0af68;
+    color-orange:    #ff9e64;
+    color-blue:      #7aa2f7;
+    color-alt-black: #414868;
 
-    main-border: var(color-mauve);
+    main-border: var(color-blue);
 
-    normal-bg: var(color-black-0);
-    normal-fg: var(color-black-4);
+    normal-bg: var(color-black);
+    normal-fg: var(color-alt-black);
 
-    selected-bg: var(color-black-0);
+    selected-bg: var(color-alt-black);
     selected-fg: var(color-white);
 
-    prompt-bg: var(color-mauve);
-    prompt-fg: var(color-black-0);
+    prompt-bg: var(color-blue);
+    prompt-fg: var(color-black);
 
     input-bg: var(normal-bg);
     input-fg: var(selected-fg);
 
-    mode-bg: var(color-black-4);
-    mode-fg: var(color-black-0);
+    mode-bg: var(color-alt-black);
+    mode-fg: var(color-black);
 
-    mode-selected-bg: var(color-mauve);
-    mode-selected-fg: var(color-black-0);
+    mode-selected-bg: var(color-blue);
+    mode-selected-fg: var(color-black);
 
-    scroll-bg: var(color-black-4);
-    scroll-fg: var(color-white);
+    scroll-bg: var(normal-bg);
+    scroll-fg: var(color-blue);
 }
 
 window {
@@ -76,6 +69,7 @@ element {
 element selected {
     background-color: var(selected-bg);
     text-color: var(selected-fg);
+    border-radius: 2px;
 }
 
 scrollbar {
@@ -83,8 +77,8 @@ scrollbar {
     padding:      0;
     handle-width: 8px ;
     border:       0;
-    handle-color: var(color-white);
-    background-color: var(color-black-4);
+    handle-color: var(scroll-fg);
+    background-color: var(scroll-bg);
 }
 
 mode-switcher {
@@ -101,7 +95,7 @@ button {
 
 button selected {
     background-color: var(mode-selected-bg);
-    text-color:       var(mode-selected-fg);
+    text-color: var(mode-selected-fg);
 }
 
 inputbar {

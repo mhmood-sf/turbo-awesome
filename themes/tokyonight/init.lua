@@ -6,23 +6,23 @@ local dpi = xresources.apply_dpi
 local HOME = os.getenv("HOME")
 local THEMES = HOME .. "/.config/awesome/themes"
 
-local THEME_DIR = THEMES .. "/dracula"
+local THEME_DIR = THEMES .. "/tokyonight"
 
 --[[
 
-local dracula = {
-    background = "#282a36",
-    current_line = "#44475a",
-    selection = "#44475a",
-    foreground = "#f8f8f2",
+local tokyonight = {
+    background = "#1a1b26",
+    comments = "#565f89",
+    foreground = "#c0caf5",
     comment = "#6272a4",
-    cyan = "#8be9fd",
-    green = "#50fa7b",
-    orange = "#ffb86c",
-    pink = "#ff79c6",
-    purple = "#bd93f9",
-    red = "#ff5555",
-    yellow = "#f1fa8c"
+    blue = "#7aa2f7",
+    cyan = "#7dcfff",
+    magenta = "#bb9af7",
+    green = "#73daca",
+    orange = "#ff9e64",
+    red = "#f7768e",
+    yellow = "#e0af68",
+    terminal_black = "#414868"
 }
 
 --]]
@@ -30,18 +30,17 @@ local dracula = {
 local theme = {}
 
 theme.colors = {
-    red    = "#ff5555",
-    cyan   = "#8be9fd",
-    grey   = "#44475a",
-    purple = "#bd93f9",
-    pink   = "#ff79c6",
-    black  = "#282a36",
-    green  = "#50fa7b",
-    white  = "#f8f8f2",
-    yellow = "#f1fa8c",
-    orange = "#ffb86c",
-    blue   = "#6272a4",
-    alt_black = "#6272a4"
+    red    = "#f7768e",
+    cyan   = "#7dcfff",
+    grey   = "#6272a4",
+    purple = "#bb9af7",
+    black  = "#1a1b26",
+    green  = "#73daca",
+    white  = "#c0caf5",
+    yellow = "#e0af68",
+    orange = "#ff9e64",
+    blue   = "#7aa2f7",
+    alt_black = "#414868"
 }
 
 theme.colors.accent = theme.colors.blue
