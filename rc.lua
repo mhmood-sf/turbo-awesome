@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.dracula"
+local theme = require "themes.quzah"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 

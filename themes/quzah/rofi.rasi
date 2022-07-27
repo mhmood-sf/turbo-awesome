@@ -1,0 +1,127 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.5.4
+ **/
+* {
+    color-red:       #EF476F;
+    color-cyan:      #4ECDC4;
+    color-grey:      #3E4856;
+    color-purple:    #AE7BFF;
+    color-pink:      #F97FDD;
+    color-black:     #17171C;
+    color-green:     #66DB8D;
+    color-white:     #ECEFF4;
+    color-yellow:    #FADD5C;
+    color-orange:    #F1A071;
+    color-blue:      #669BD0;
+    color-alt-black: #222430;
+
+    main-border: var(color-blue);
+
+    normal-bg: var(color-black);
+    normal-fg: var(color-grey);
+
+    selected-bg: var(color-blue);
+    selected-fg: var(color-black);
+
+    prompt-bg: var(color-blue);
+    prompt-fg: var(color-black);
+
+    input-bg: var(normal-bg);
+    input-fg: var(color-white);
+
+    mode-bg: var(color-grey);
+    mode-fg: var(color-black);
+
+    mode-selected-bg: var(color-blue);
+    mode-selected-fg: var(color-black);
+
+    scroll-bg: var(normal-bg);
+    scroll-fg: var(color-grey);
+}
+
+window {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+mainbox {
+    padding: 20;
+    background-color: var(normal-bg);
+    border: 2 solid 2;
+    border-color: var(main-border);
+}
+
+listview {
+    padding: 0;
+    margin: 10px 0;
+    scrollbar: true;
+    fixed-height: 0;
+    background-color: var(normal-bg);
+}
+
+element {
+    padding: 5px;
+    background-color: var(normal-bg);
+    text-color: var(normal-fg);
+}
+
+element selected {
+    background-color: var(selected-bg);
+    text-color: var(selected-fg);
+    border-radius: 2px;
+}
+
+scrollbar {
+    width:        4px;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: var(scroll-fg);
+    background-color: var(scroll-bg);
+}
+
+mode-switcher {
+    background-color: var(normal-bg);
+}
+
+button {
+    padding: 5px;
+    margin: 10px 20px;
+    background-color: var(mode-bg);
+    text-color: var(mode-fg);
+    border-radius: 2px;
+}
+
+button selected {
+    background-color: var(mode-selected-bg);
+    text-color: var(mode-selected-fg);
+}
+
+inputbar {
+    padding: 0px;
+    spacing: 10px;
+    text-color: var(normal-fg);
+    background-color: var(normal-bg);
+    children: [ prompt,entry,overlay ];
+}
+
+prompt {
+    padding: 5px;
+    text-color: var(prompt-fg);
+    background-color: var(prompt-bg);
+    border-radius: 2px;
+}
+
+entry {
+    padding: 5px;
+    text-color: var(input-fg);
+    background-color: var(input-bg);
+}
+
+error-message {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    text-color:       var(normal-foreground);
+}
+
