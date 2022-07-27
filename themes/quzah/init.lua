@@ -154,6 +154,9 @@ theme.notification_error_bg = color.red
 theme.notification_error_fg = color.alt_black
 theme.notification_border_width = 0
 theme.notification_margin = 10
+theme.notification_shape = function(cr, x, y)
+    return gears.shape.rounded_rect(cr, x, y, 3)
+end
 
 -- Infocus
 theme.infocus_bg = color.blue
