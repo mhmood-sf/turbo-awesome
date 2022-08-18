@@ -12,6 +12,15 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 
+    if c.class == "kitty" then
+        local w = c.screen.geometry.width
+        local h = c.screen.geometry.height
+        c.x = (w / 2) - (c.width / 2)
+        c.y = (h / 2) - (c.height / 2)
+        c.height = 400
+        c.width = 500
+    end
+
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
