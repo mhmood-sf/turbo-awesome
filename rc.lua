@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.quzah"
+local theme = require "themes.aks"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 
@@ -18,7 +18,7 @@ browser = HOME .. "/Downloads/firefox/firefox"
 launcher = "rofi -show drun -theme " .. theme.rofi
 
 -- File Manager: Thunar
-filemanager = terminal .. " -e nnn -dDHo"
+filemanager = "thunar"
 
 -- Music player: cmus
 musicplayer = terminal .. " -e cmus"
