@@ -5,16 +5,6 @@ local naughty = require "naughty"
 local audio = require "system.audio"
 local brightness = require "system.brightness"
 
-local test = require "test"
-
-local function toggle_wibar()
-    if test.bar.target == 1 then
-        test.bar.target = 0
-    else
-        test.bar.target = 1
-    end
-end
-
 -- Key bindings
 globalkeys = gears.table.join(
     -- Volum up/down/mute using amixer
