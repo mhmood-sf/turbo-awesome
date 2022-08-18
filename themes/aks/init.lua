@@ -6,46 +6,23 @@ local dpi = xresources.apply_dpi
 local HOME = os.getenv("HOME")
 local THEMES = HOME .. "/.config/awesome/themes"
 
-local THEME_DIR = THEMES .. "/quzah"
-
---[[
-
-"dark": {
-    "shade0": "#17171C",
-    "shade1": "#222430",
-    "shade2": "#3E4856",
-    "shade3": "#5B697B",
-    "shade4": "#CBD1EC",
-    "shade5": "#DADEF1",
-    "shade6": "#E5E9F0",
-    "shade7": "#ECEFF4",
-    "accent0": "#EF476F",
-    "accent1": "#F1A071",
-    "accent2": "#FADD5C",
-    "accent3": "#66DB8D",
-    "accent4": "#4ECDC4",
-    "accent5": "#669BD0",
-    "accent6": "#F97FDD",
-    "accent7": "#AE7BFF"
-}
-
---]]
+local THEME_DIR = THEMES .. "/aks"
 
 local theme = {}
 
 theme.colors = {
-    red    = "#EF476F",
-    cyan   = "#4ECDC4",
-    grey   = "#3E4856",
-    purple = "#AE7BFF",
-    pink   = "#F97FDD",
     black  = "#17171C",
-    green  = "#66DB8D",
+    dark   = "#222430",
+    light  = "#5B697B",
     white  = "#ECEFF4",
+    red    = "#EF476F",
+    orange = "#FE995E",
     yellow = "#FADD5C",
-    orange = "#F1A071",
-    blue   = "#669BD0",
-    alt_black = "#222430"
+    green  = "#66DB8D",
+    cyan   = "#4ECDC4",
+    blue   = "#5596F7",
+    pink   = "#FC56B1",
+    purple = "#A972FF",
 }
 
 theme.colors.accent = theme.colors.blue
@@ -56,7 +33,7 @@ theme.colors.fg_focus = theme.colors.accent
 theme.colors.bg_error = theme.colors.red
 theme.colors.fg_error = theme.colors.black
 theme.colors.bg_empty = theme.colors.black
-theme.colors.fg_empty = theme.colors.grey
+theme.colors.fg_empty = theme.colors.light
 theme.colors.prominent = theme.colors.green
 
 local color = theme.colors
@@ -72,14 +49,14 @@ theme.fg_focus      = color.fg_focus
 theme.bg_urgent     = color.bg_error
 theme.fg_urgent     = color.fg_error
 
-theme.bg_minimize   = color.alt_black
+theme.bg_minimize   = color.dark
 theme.fg_minimize   = color.white
 
 theme.bg_systray    = color.bg_normal
 
 theme.useless_gap   = dpi(3)
 theme.border_width  = dpi(2)
-theme.border_normal = color.alt_black
+theme.border_normal = color.dark
 theme.border_focus  = color.accent
 theme.border_marked = color.prominent
 
@@ -105,7 +82,7 @@ theme.taglist_fg_volatile = color.fg_error
 -- Taglist squares:
 local taglist_square_size = dpi(7)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, color.alt_black
+    taglist_square_size, color.dark
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, color.white
@@ -140,7 +117,7 @@ theme.hotkeys_description_font = "monospace 8"
 theme.hotkeys_border_width = 2
 theme.hotkeys_border_color = color.accent
 theme.hotkeys_shape = nil
-theme.hotkeys_modifiers_fg = color.grey
+theme.hotkeys_modifiers_fg = color.light
 
 -- Menu
 theme.menu_bg_focus = color.blue
@@ -148,10 +125,10 @@ theme.menu_fg_focus = color.white
 
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
-theme.notification_bg = color.prominent
+theme.notification_bg = color.accent
 theme.notification_fg = color.black
 theme.notification_error_bg = color.red
-theme.notification_error_fg = color.alt_black
+theme.notification_error_fg = color.dark
 theme.notification_border_width = 0
 theme.notification_margin = 10
 theme.notification_shape = function(cr, x, y)
@@ -159,7 +136,7 @@ theme.notification_shape = function(cr, x, y)
 end
 
 -- Infocus
-theme.infocus_bg = color.blue
+theme.infocus_bg = color.accent
 theme.infocus_fg = color.black
 theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 
