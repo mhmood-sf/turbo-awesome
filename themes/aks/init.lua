@@ -55,7 +55,6 @@ theme.fg_minimize   = color.white
 theme.bg_systray    = color.bg_normal
 
 theme.useless_gap   = dpi(3)
--- CHANGED
 theme.border_width  = dpi(0)
 theme.border_normal = color.dark
 theme.border_focus  = color.accent
@@ -79,46 +78,21 @@ theme.taglist_fg_empty = color.fg_empty
 theme.taglist_bg_volatile = color.bg_normal
 theme.taglist_fg_volatile = color.fg_error
 
---[[
--- Taglist squares:
-local taglist_square_size = dpi(7)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, color.dark
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, color.white
-)
---]]
-
--- Tasklist
-theme.tasklist_bg_focus = color.bg_focus
-theme.tasklist_fg_focus = color.fg_focus
-
-theme.tasklist_bg_urgent = color.bg_error
-theme.tasklist_fg_urgent = color.fg_error
-
-theme.tasklist_disable_icon = true
-
 -- Titlebar
 theme.titlebar_bg_normal = color.bg_normal
 theme.titlebar_fg_normal = color.fg_normal
 
-theme.titlebar_bg_focus = color.bg_focus
-theme.titlebar_fg_focus = color.fg_focus
+theme.titlebar_close_button_focus = color.red
+theme.titlebar_close_button_normal = color.light
 
-theme.titlebar_quit_color = color.red
-theme.titlebar_maximize_color = color.blue
-theme.titlebar_minimize_color = color.orange
+theme.titlebar_maximized_button_focus = color.green
+theme.titlebar_maximized_button_normal = color.light
 
--- Hotkeys
-theme.hotkeys_bg = color.black
-theme.hotkeys_fg = color.white
-theme.hotkeys_font = "monospace 9"
-theme.hotkeys_description_font = "monospace 8"
-theme.hotkeys_border_width = 2
-theme.hotkeys_border_color = color.accent
-theme.hotkeys_shape = nil
-theme.hotkeys_modifiers_fg = color.light
+theme.titlebar_minimize_button_focus = color.orange
+theme.titlebar_minimize_button_normal = color.light
+
+theme.titlebar_drag_button_focus = color.accent
+theme.titlebar_drag_button_normal = color.light
 
 -- Menu
 theme.menu_bg_focus = color.blue
@@ -133,7 +107,7 @@ theme.notification_error_fg = color.dark
 theme.notification_border_width = 0
 theme.notification_margin = 10
 theme.notification_shape = function(cr, x, y)
-    return gears.shape.rounded_rect(cr, x, y, 3)
+    return gears.shape.rounded_rect(cr, x, y, 4)
 end
 
 -- Infocus
