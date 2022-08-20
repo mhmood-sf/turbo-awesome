@@ -55,7 +55,8 @@ theme.fg_minimize   = color.white
 theme.bg_systray    = color.bg_normal
 
 theme.useless_gap   = dpi(3)
-theme.border_width  = dpi(2)
+-- CHANGED
+theme.border_width  = dpi(0)
 theme.border_normal = color.dark
 theme.border_focus  = color.accent
 theme.border_marked = color.prominent
