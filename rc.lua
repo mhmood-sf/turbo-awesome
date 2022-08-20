@@ -26,6 +26,9 @@ musicplayer = terminal .. " -e cmus"
 -- Screenshot command
 screenshot = "flameshot gui"
 
+-- Run compositor in the background
+require"awful".spawn("picom -b")
+
 -- Set up global/client bindings
 -- NOTE: Needs to be called first for some reason.
 require "bindings"
