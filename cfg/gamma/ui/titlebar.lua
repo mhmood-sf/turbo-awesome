@@ -6,8 +6,8 @@ local beautiful = require "beautiful"
 local color = {
     drag_focus = beautiful.titlebar_drag_button_focus or "#0000ff",
     drag_normal = beautiful.titlebar_drag_button_normal or "#999999",
-    quit_focus = beautiful.titlebar_close_button_focus or "#ff0000",
-    quit_normal = beautiful.titlebar_close_button_normal or "#999999",
+    close_focus = beautiful.titlebar_close_button_focus or "#ff0000",
+    close_normal = beautiful.titlebar_close_button_normal or "#999999",
     max_focus = beautiful.titlebar_maximized_button_focus or "#00ff00",
     max_normal = beautiful.titlebar_maximized_button_normal or "#999999",
     min_focus = beautiful.titlebar_minimize_button_focus or "#ffff00",
@@ -66,7 +66,7 @@ end)
 
 return function(c)
     -- Close button
-    local quit_button = awful.button({}, 1, function()
+    local close_button = awful.button({}, 1, function()
         client.focus = c
         c:kill()
     end)
@@ -82,7 +82,9 @@ return function(c)
     end)
 
     -- Minimize button
+    -- TODO: Doesn't work for some reason.
     local min_button = awful.button({}, 1, function()
+        client.focus = c
         c.minimized = true
     end)
 
@@ -107,11 +109,11 @@ return function(c)
         buttons = focus_button
     }
 
-    local quit_button_widget = wibox.widget {
+    local close_button_widget = wibox.widget {
         widget = wibox.widget.imagebox,
-        image = button_surface(color.quit_normal),
+        image = button_surface(color.close_normal),
         resize = true,
-        buttons = quit_button
+        buttons = close_button
     }
 
     local max_button_widget = wibox.widget {
@@ -149,7 +151,7 @@ return function(c)
                     bottom = 10,
                     left = 7,
                     right = 7,
-                    quit_button_widget
+                    close_button_widget
                 },
                 {
                     widget = wibox.container.margin,
@@ -186,25 +188,26 @@ return function(c)
         c.shape = tb_right_shape
     end
 
+    -- NOTE sometimes when restarting awesome, the titlebar button
+    -- colors are a bit out of sync (i.e unfocused clients may have
+    -- focused button colors and vice versa), probably because of
+    -- how signals are emitted and how clients are "created" (?) when
+    -- restarting awesome (restarting doesn't actually close and then
+    -- re-open clients, it does something else, I'm not sure). Anyways,
+    -- it shouldn't be too much of a bother in normal usage, just when
+    -- restarting awesome + it goes away once you explicitly focus on
+    -- a specific client.
     c.update_focus = function(focused)
         if focused then
-            quit_button_widget.image = button_surface(color.quit_focus)
+            close_button_widget.image = button_surface(color.close_focus)
             max_button_widget.image = button_surface(color.max_focus)
             min_button_widget.image = button_surface(color.min_focus)
             focus_button_widget.image = button_surface(color.drag_focus)
         else
-            quit_button_widget.image = button_surface(color.quit_normal)
+            close_button_widget.image = button_surface(color.close_normal)
             max_button_widget.image = button_surface(color.max_normal)
             min_button_widget.image = button_surface(color.min_normal)
             focus_button_widget.image = button_surface(color.drag_normal)
         end
     end
-
-    -- It seems like the INITIAL "focus" signal is emitted before
-    -- the titlebars are initialized properly, which means when new
-    -- windows are created, their buttons aren't colored properly
-    -- even if the client is focused. Which is why after initializing
-    -- the titlebars, we run the update_focus function once to make
-    -- sure the buttons are colored properly nicely.
-    c.update_focus(true)
 end
