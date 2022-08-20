@@ -188,15 +188,6 @@ return function(c)
         c.shape = tb_right_shape
     end
 
-    -- NOTE sometimes when restarting awesome, the titlebar button
-    -- colors are a bit out of sync (i.e unfocused clients may have
-    -- focused button colors and vice versa), probably because of
-    -- how signals are emitted and how clients are "created" (?) when
-    -- restarting awesome (restarting doesn't actually close and then
-    -- re-open clients, it does something else, I'm not sure). Anyways,
-    -- it shouldn't be too much of a bother in normal usage, just when
-    -- restarting awesome + it goes away once you explicitly focus on
-    -- a specific client.
     c.update_focus = function(focused)
         if focused then
             close_button_widget.image = button_surface(color.close_focus)
@@ -210,4 +201,16 @@ return function(c)
             focus_button_widget.image = button_surface(color.drag_normal)
         end
     end
+
+    -- NOTE sometimes when restarting awesome, the titlebar button
+    -- colors are a bit out of sync (i.e unfocused clients may have
+    -- focused button colors and vice versa), probably because of
+    -- how signals are emitted and how clients are "created" (?) when
+    -- restarting awesome (restarting doesn't actually close and then
+    -- re-open clients, it does something else, I'm not sure). Anyways,
+    -- that's why over here we explicitly focus the current client and
+    -- set its titlebar colors to try and make sure everything is
+    -- properly in order.
+    client.focus = c
+    c.update_focus(true)
 end
