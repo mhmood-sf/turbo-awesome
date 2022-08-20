@@ -3,6 +3,8 @@ local wibox = require "wibox"
 local beautiful = require "beautiful"
 local gears = require "gears"
 
+local set_titlebar = require "cfg.gamma.ui.titlebar"
+
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
     if awesome.startup
@@ -15,11 +17,15 @@ client.connect_signal("manage", function (c)
     if c.class == "kitty" then
         local w = c.screen.geometry.width
         local h = c.screen.geometry.height
-        c.x = (w / 2) - (c.width / 2)
-        c.y = (h / 2) - (c.height / 2)
+
         c.height = 400
         c.width = 500
+
+        c.x = (w / 2) - (c.width / 2)
+        c.y = (h / 2) - (c.height / 2)
     end
+
+    set_titlebar(c)
 
 end)
 
