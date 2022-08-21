@@ -1,3 +1,4 @@
+local awful = require "awful"
 local wibox = require "wibox"
 
 function update_minilist(c)
@@ -49,6 +50,19 @@ return function(s)
     for _, tag in ipairs(s.tags) do
         tb.per_tag[tag.index] = 0
     end
+
+    tb:connect_signal(
+        "button::press",
+        function()
+            local c = awful.client.restore()
+            -- Focus restored client
+            if c then
+                c:emit_signal(
+                    "request::activate", "key.unminimize", {raise = true}
+                )
+            end
+        end
+    )
 
     -- Attach to screen and return it.
     s.minilist = tb
