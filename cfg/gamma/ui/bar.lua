@@ -2,7 +2,7 @@ local awful = require "awful"
 local wibox = require "wibox"
 local beautiful = require "beautiful"
 
-local infocus  = require "cfg.base.ui.infocus"
+--local infocus  = require "cfg.base.ui.infocus"
 local basetray = require "cfg.base.ui.tray"
 local minilist = require "cfg.base.ui.minilist"
 
@@ -71,7 +71,8 @@ return function(s)
             {
                 layout = wibox.layout.fixed.horizontal,
                 tray,
-                infocus(s),
+                nil,
+                --infocus(s),
                 layout
             },
         }

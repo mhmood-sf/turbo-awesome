@@ -2,7 +2,7 @@ local awful = require "awful"
 local gears = require "gears"
 
 local bar = require "cfg.gamma.ui.bar"
-local menu = require "cfg.base.ui.menu"
+local menu = require "cfg.gamma.ui.menu"
 local wallpaper = require "cfg.base.ui.wallpaper"
 
 -- Set up the right-click menu.
