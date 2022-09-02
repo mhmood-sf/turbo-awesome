@@ -64,13 +64,13 @@ theme.border_marked = color.prominent
 theme.taglist_font = "Cascadia Code PL 11"
 
 theme.taglist_bg_focus = color.bg_normal
-theme.taglist_fg_focus = color.fg_normal
+theme.taglist_fg_focus = color.accent
 
 theme.taglist_bg_urgent = color.bg_normal
 theme.taglist_fg_urgent = color.fg_error
 
 theme.taglist_bg_occupied = color.bg_normal
-theme.taglist_fg_occupied = color.accent
+theme.taglist_fg_occupied = color.fg_normal
 
 theme.taglist_bg_empty = color.bg_normal
 theme.taglist_fg_empty = color.fg_empty
@@ -115,7 +115,6 @@ theme.infocus_bg = color.accent
 theme.infocus_fg = color.black
 theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 
--- Source: https://github.com/catppuccin/wallpapers/blob/main/mandelbrot/mandelbrot_full_magenta.png
 theme.wallpaper = THEME_DIR .. "/wallpaper.png"
 
 -- TODO: Rename ALL icons to follow the following format:
