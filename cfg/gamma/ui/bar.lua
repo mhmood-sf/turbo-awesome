@@ -1,5 +1,6 @@
 local awful = require "awful"
 local wibox = require "wibox"
+local gears = require "gears"
 local beautiful = require "beautiful"
 
 --local infocus  = require "cfg.base.ui.infocus"
@@ -18,10 +19,15 @@ local layout = wibox.widget {
     forced_height = 30,
     forced_width = 30,
     {
-        widget = wibox.container.place,
-        halign = "center",
-        valign = "center",
-        layoutbox
+        widget = wibox.container.margin,
+        bottom = 3,
+        top = 2,
+        {
+            widget = wibox.container.place,
+            halign = "center",
+            valign = "center",
+            layoutbox
+        }
     }
 }
 
@@ -31,7 +37,6 @@ local tray = wibox.widget {
     basetray
 }
 
---local clock = awful.widget.textclock()
 local clock = wibox.widget {
     widget = wibox.container.background,
     fg = beautiful.fg_normal,
@@ -39,7 +44,7 @@ local clock = wibox.widget {
     {
         widget = wibox.widget.textclock,
         format = "%H:%M",
-        font = "Cascadia Code PL Semibold 10",
+        font = "sans-serif semibold 10",
         valign = "center"
     }
 }
