@@ -7,6 +7,7 @@ local set_titlebar = require "cfg.gamma.ui.titlebar"
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
+    -- Copied from the default awesome config.
     if awesome.startup
       and not c.size_hints.user_position
       and not c.size_hints.program_position then
@@ -14,19 +15,20 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 
-    if c.class == "kitty" then
-        local w = c.screen.geometry.width
-        local h = c.screen.geometry.height
-
-        c.height = 400
-        c.width = 500
-
-        c.x = (w / 2) - (c.width / 2)
-        c.y = (h / 2) - (c.height / 2)
-    end
-
+    -- Set titlebar for client.
     set_titlebar(c)
 
+    -- Set a comfy height/width for floating terminal windows.
+    if c.class == "kitty" then
+        c.height = 400
+        c.width = 500
+    end
+
+    -- Center all windows (only applies to floating windows)
+    local w = c.screen.geometry.width
+    local h = c.screen.geometry.height
+    c.x = (w / 2) - (c.width / 2)
+    c.y = (h / 2) - (c.height / 2)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
