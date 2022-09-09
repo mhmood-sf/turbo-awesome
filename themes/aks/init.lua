@@ -95,8 +95,9 @@ theme.titlebar_drag_button_focus = color.accent
 theme.titlebar_drag_button_normal = color.light
 
 -- Menu
-theme.menu_bg_focus = color.blue
-theme.menu_fg_focus = color.white
+theme.menu_bg_focus = color.black
+theme.menu_fg_focus = color.accent
+
 
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
