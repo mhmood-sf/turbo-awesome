@@ -1,5 +1,6 @@
 local awful = require "awful"
 local wibox = require "wibox"
+local beautiful = require "beautiful"
 
 function update_minilist(c)
     local minilist = c.screen.minilist
@@ -42,6 +43,7 @@ tag.connect_signal("property::selected", update_minilist)
 return function(s)
     -- The main textbox
     local tb = wibox.widget.textbox("")
+    tb.font = beautiful.minilist_font or "sans-serif 8.5"
     tb.align = "center"
     -- Track list of minimized clients per tag.
     tb.per_tag = {}
