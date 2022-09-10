@@ -139,7 +139,7 @@ return function(c)
 
     titlebar:setup {
         widget = wibox.container.background,
-        bg = beautiful.colors.black,
+        bg = beautiful.color.black,
         shape = tb_left_shape,
         {
             layout = wibox.layout.align.vertical,

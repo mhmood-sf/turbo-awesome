@@ -14,7 +14,7 @@ layoutbox.forced_width = 20
 
 local layout = wibox.widget {
     widget = wibox.container.background,
-    bg = beautiful.colors.alt_black,
+    bg = beautiful.color.dark,
     forced_height = 30,
     forced_width = 30,
     {
@@ -34,7 +34,7 @@ local tray = wibox.widget {
 --local clock = awful.widget.textclock()
 local clock = wibox.widget {
     widget = wibox.container.background,
-    fg = beautiful.colors.white,
+    fg = beautiful.color.white,
     {
         widget = wibox.widget.textclock,
         format = "%H:%M",

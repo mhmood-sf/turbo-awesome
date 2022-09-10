@@ -3,12 +3,12 @@ local wibox = require "wibox"
 local gears = require "gears"
 local beautiful = require "beautiful"
 
---local infocus  = require "cfg.base.ui.infocus"
 local basetray = require "cfg.base.ui.tray"
 local minilist = require "cfg.base.ui.minilist"
 
 local taglist  = require "cfg.gamma.ui.taglist"
 
+-- Layout box
 local layoutbox = awful.widget.layoutbox()
 layoutbox.forced_height = 20
 layoutbox.forced_width = 20
@@ -31,12 +31,14 @@ local layout = wibox.widget {
     }
 }
 
+-- System Tray
 local tray = wibox.widget {
     widget = wibox.container.background,
     forced_width = 50,
     basetray
 }
 
+-- Clock
 local clock = wibox.widget {
     widget = wibox.container.background,
     fg = beautiful.fg_normal,
@@ -44,7 +46,7 @@ local clock = wibox.widget {
     {
         widget = wibox.widget.textclock,
         format = "%H:%M",
-        font = "sans-serif semibold 10",
+        font = beautiful.clock_font or beautiful.font or "sans-serif semibold 10",
         valign = "center"
     }
 }
@@ -54,12 +56,18 @@ return function(s)
         position = "top",
         screen = s,
         ontop = false,
-        bg = (beautiful.wibar_bg_normal or beautiful.bg_normal or "#00000000")
+        bg = (beautiful.wibar_bg_normal or beautiful.color.black or "#00000000")
     })
 
     s.elements.bar:setup {
         layout = wibox.layout.flex.horizontal,
-        taglist(s),
+        -- Left: Taglist
+        {
+            widget = wibox.container.place,
+            halign = "left",
+            taglist(s)
+        },
+        -- Center: Clock, Minilist
         {
             widget = wibox.container.place,
             halign = "center",
@@ -67,9 +75,10 @@ return function(s)
                 layout = wibox.layout.fixed.horizontal,
                 spacing = 10,
                 clock,
-                minilist(s),
+                minilist(s)
             }
         },
+        -- Right: System Tray, Layoutbox
         {
             widget = wibox.container.place,
             halign = "right",

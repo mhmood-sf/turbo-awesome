@@ -43,7 +43,7 @@ tag.connect_signal("property::selected", update_minilist)
 return function(s)
     -- The main textbox
     local tb = wibox.widget.textbox("")
-    tb.font = beautiful.minilist_font or "sans-serif 8.5"
+    tb.font = beautiful.minilist_font or beautiful.font or "sans-serif 8.5"
     tb.align = "center"
     -- Track list of minimized clients per tag.
     tb.per_tag = {}

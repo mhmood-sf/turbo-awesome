@@ -44,22 +44,22 @@ return function(c)
     local titlebar = awful.titlebar(c, {
         position = "left",
         size = 12,
-        bg_focus = beautiful.colors.alt_black,
-        bg_normal = beautiful.colors.alt_black
+        bg_focus = beautiful.color.dark,
+        bg_normal = beautiful.color.dark
     })
 
     titlebar:setup {
         layout = wibox.layout.flex.vertical,
         get_titlebar_button(
-            beautiful.titlebar_quit_color or beautiful.colors.red or "#ff0000",
+            beautiful.titlebar_quit_color or beautiful.color.red or "#ff0000",
             function() c:kill() end
         ),
         get_titlebar_button(
-            beautiful.titlebar_maximize_color or beautiful.colors.green or "#00ff00",
+            beautiful.titlebar_maximize_color or beautiful.color.green or "#00ff00",
             function() if c.maximized then c.maximized = false else c.maximized = true end end
         ),
         get_titlebar_button(
-            beautiful.titlebar_minimize_color or beautiful.colors.yellow or "#ffff00",
+            beautiful.titlebar_minimize_color or beautiful.color.yellow or "#ffff00",
             function() c.minimized = true end
         )
     }
