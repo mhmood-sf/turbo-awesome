@@ -10,7 +10,7 @@ local THEME_DIR = THEMES .. "/aks"
 
 local theme = {}
 
-theme.colors = {
+theme.color = {
     black  = "#17171C",
     dark   = "#222430",
     light  = "#5B697B",
@@ -25,36 +25,16 @@ theme.colors = {
     purple = "#A972FF",
 }
 
-theme.colors.accent = theme.colors.blue
-theme.colors.bg_normal = theme.colors.black
-theme.colors.fg_normal = theme.colors.white
-theme.colors.bg_focus = theme.colors.black
-theme.colors.fg_focus = theme.colors.accent
-theme.colors.bg_error = theme.colors.red
-theme.colors.fg_error = theme.colors.black
-theme.colors.bg_empty = theme.colors.black
-theme.colors.fg_empty = theme.colors.light
-theme.colors.prominent = theme.colors.green
+theme.color.accent = theme.color.blue
+theme.color.prominent = theme.color.green
 
-local color = theme.colors
+local color = theme.color
 
 theme.font          = "Cascadia Code PL 9.5"
 
-theme.bg_normal     = color.bg_normal
-theme.fg_normal     = color.fg_normal
+theme.bg_systray    = color.black
 
-theme.bg_focus      = color.bg_focus
-theme.fg_focus      = color.fg_focus
-
-theme.bg_urgent     = color.bg_error
-theme.fg_urgent     = color.fg_error
-
-theme.bg_minimize   = color.dark
-theme.fg_minimize   = color.white
-
-theme.bg_systray    = color.bg_normal
-
-theme.useless_gap   = dpi(3)
+theme.useless_gap   = dpi(5)
 theme.border_width  = dpi(0)
 theme.border_normal = color.dark
 theme.border_focus  = color.accent
@@ -63,24 +43,24 @@ theme.border_marked = color.prominent
 -- Taglist
 theme.taglist_font = "Cascadia Code PL 11"
 
-theme.taglist_bg_focus = color.bg_normal
 theme.taglist_fg_focus = color.accent
+theme.taglist_bg_focus = gears.color.transparent
 
-theme.taglist_bg_urgent = color.bg_normal
-theme.taglist_fg_urgent = color.fg_error
+theme.taglist_fg_occupied = color.white
+theme.taglist_bg_occupied = gears.color.transparent
 
-theme.taglist_bg_occupied = color.bg_normal
-theme.taglist_fg_occupied = color.fg_normal
+theme.taglist_fg_empty = color.light
+theme.taglist_bg_empty = gears.color.transparent
 
-theme.taglist_bg_empty = color.bg_normal
-theme.taglist_fg_empty = color.fg_empty
+theme.taglist_fg_urgent = color.red
+theme.taglist_bg_urgent = gears.color.transparent
 
-theme.taglist_bg_volatile = color.bg_normal
-theme.taglist_fg_volatile = color.fg_error
+theme.taglist_fg_volatile = color.red
+theme.taglist_bg_volatile = gears.color.transparent
 
 -- Titlebar
-theme.titlebar_bg_normal = color.bg_normal
-theme.titlebar_fg_normal = color.fg_normal
+theme.titlebar_bg_normal = color.black
+theme.titlebar_fg_normal = color.white
 
 theme.titlebar_close_button_focus = color.red
 theme.titlebar_close_button_normal = color.light
@@ -98,6 +78,11 @@ theme.titlebar_drag_button_normal = color.light
 theme.menu_bg_focus = color.black
 theme.menu_fg_focus = color.accent
 
+-- Clock
+theme.clock_font = "Roboto Bold 10"
+
+-- Minilist
+theme.minilist_font = theme.taglist_font
 
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
