@@ -2,9 +2,11 @@ local awful = require "awful"
 local gears = require "gears"
 local wibox = require "wibox"
 
+local beautiful = require "beautiful"
+
 -- Tag names
 local names = {
-    " ●", "●", "●", "●", "●"
+    "●", "●", "●", "●", "●"
 }
 
 -- Layouts available for each tag
@@ -31,12 +33,16 @@ return function(s)
     local taglist_widget = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
-        buttons = buttons
+        buttons = buttons,
     }
 
     local container = {
         layout = wibox.layout.fixed.horizontal,
-        taglist_widget
+        {
+            widget = wibox.container.margin,
+            left = 5,
+            taglist_widget
+        }
     }
 
     return container
