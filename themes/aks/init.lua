@@ -75,6 +75,8 @@ theme.titlebar_drag_button_focus = color.accent
 theme.titlebar_drag_button_normal = color.light
 
 -- Menu
+theme.menu_bg_normal = color.black
+theme.menu_fg_normal = color.white
 theme.menu_bg_focus = color.black
 theme.menu_fg_focus = color.accent
 
@@ -82,7 +84,7 @@ theme.menu_fg_focus = color.accent
 theme.clock_font = "Roboto Bold 10"
 
 -- Minilist
-theme.minilist_font = theme.taglist_font
+theme.minilist_font = "Cascadia Code PL 11"
 
 -- Notifications
 theme.notification_font = "Cascadia Code PL 10"
