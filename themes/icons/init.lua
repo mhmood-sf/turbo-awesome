@@ -1,48 +1,54 @@
 local HOME = os.getenv("HOME")
 local THEMES = HOME .. "/.config/awesome/themes"
-local ICONS_DIR = THEMES .. "/icons"
+local ICONS_DIR = THEMES .. "/icons/files"
 
 return {
+    ui = {
+        pacman = ICONS_DIR .. "/ui/pacman.svg",
+        ghost_blue = ICONS_DIR .. "/ui/ghost-blue.svg",
+        ghost_light = ICONS_DIR .. "/ui/ghost-light.svg"
+    },
+
     layout = {
-        spiral   = ICONS_DIR .. "/icons/layout/spiralw.png",
-        floating = ICONS_DIR .. "/icons/layout/floatingw.png",
+        spiral   = ICONS_DIR .. "/layout/spiralw.png",
+        floating = ICONS_DIR .. "/layout/floatingw.png",
     },
 
     apps = {
-        office      = ICONS_DIR .. "/icons/apps/stack-fill-light.png",
-        browser     = ICONS_DIR .. "/icons/apps/firefox-fill-light.png",
-        obsidian    = ICONS_DIR .. "/icons/apps/obsidian.png",
-        terminal    = ICONS_DIR .. "/icons/apps/terminal-window-fill-light.png",
-        filemanager = ICONS_DIR .. "/icons/system/folders-fill-light.png",
-        musicplayer = ICONS_DIR .. "/icons/apps/headphones-fill-light.png"
+        office      = ICONS_DIR .. "/apps/stack-fill-light.png",
+        browser     = ICONS_DIR .. "/apps/firefox-fill-light.png",
+        obsidian    = ICONS_DIR .. "/apps/obsidian.png",
+        terminal    = ICONS_DIR .. "/apps/terminal-window-fill-light.png",
+        filemanager = ICONS_DIR .. "/system/folders-fill-light.png",
+        musicplayer = ICONS_DIR .. "/apps/headphones-fill-light.png"
     },
 
     system = {
-        cpu  = ICONS_DIR .. "/icons/system/gauge.png",
-        mem  = ICONS_DIR .. "/icons/system/cpu.png",
-        temp = ICONS_DIR .. "/icons/system/thermometer-simple.png",
+        cpu  = ICONS_DIR .. "/system/gauge.png",
+        mem  = ICONS_DIR .. "/system/cpu.png",
+        temp = ICONS_DIR .. "/system/thermometer-simple.png",
 
         audio = {
-            mute   = ICONS_DIR .. "/icons/system/speaker-x.png",
-            high   = ICONS_DIR .. "/icons/system/speaker-high.png",
-            medium = ICONS_DIR .. "/icons/system/speaker-low.png",
-            low    = ICONS_DIR .. "/icons/system/speaker-none.png",
+            mute   = ICONS_DIR .. "/system/speaker-x.png",
+            high   = ICONS_DIR .. "/system/speaker-high.png",
+            medium = ICONS_DIR .. "/system/speaker-low.png",
+            low    = ICONS_DIR .. "/system/speaker-none.png",
         },
 
         brightness = {
-            high   = ICONS_DIR .. "/icons/system/sun.png",
-            low    = ICONS_DIR .. "/icons/system/sun-dim.png",
+            high   = ICONS_DIR .. "/system/sun.png",
+            low    = ICONS_DIR .. "/system/sun-dim.png",
         },
 
         battery = {
-            low      = ICONS_DIR .. "/icons/system/battery-low.png",
-            high     = ICONS_DIR .. "/icons/system/battery-high.png",
-            charging = ICONS_DIR .. "/icons/system/battery-charging.png",
+            low      = ICONS_DIR .. "/system/battery-low.png",
+            high     = ICONS_DIR .. "/system/battery-high.png",
+            charging = ICONS_DIR .. "/system/battery-charging.png",
         },
 
         interface = {
-            shutdown = ICONS_DIR .. "/icons/system/power-fill-light.png",
-            reboot = ICONS_DIR .. "/icons/system/arrow-clockwise-fill-light.png"
+            reboot   = ICONS_DIR .. "/system/arrow-clockwise-fill-light.png",
+            shutdown = ICONS_DIR .. "/system/power-fill-light.png"
         }
     }
 }
