@@ -87,16 +87,17 @@ theme.clock_font = "Roboto Bold 10"
 theme.minilist_font = "Cascadia Code PL 11"
 
 -- Notifications
-theme.notification_font = "Cascadia Code PL 10"
-theme.notification_bg = color.accent
-theme.notification_fg = color.black
-theme.notification_error_bg = color.red
-theme.notification_error_fg = color.dark
-theme.notification_border_width = 0
+theme.notification_font = "Cascadia Code PL 9"
 theme.notification_margin = 10
-theme.notification_shape = function(cr, x, y)
-    return gears.shape.rounded_rect(cr, x, y, 4)
-end
+theme.notification_border_width = 2
+
+theme.notification_bg = color.dark
+theme.notification_fg = color.white
+theme.notification_border_color = color.accent
+
+theme.notification_error_bg = color.dark
+theme.notification_error_fg = color.white
+theme.notification_error_border_color = color.red
 
 -- Infocus
 theme.infocus_bg = color.accent
