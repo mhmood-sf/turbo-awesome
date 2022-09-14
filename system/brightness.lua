@@ -1,5 +1,6 @@
-local notif = require "notifs"
 local awful = require "awful"
+local notif = require "notif"
+
 local beautiful = require "beautiful"
 
 -- This script is run with sudo since it edits the file

@@ -1,6 +1,6 @@
 local gears = require "gears"
 local awful = require "awful"
-local naughty = require "naughty"
+local notif = require "notif"
 
 local audio = require "system.audio"
 local brightness = require "system.brightness"
@@ -64,10 +64,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "s", function () awful.client.swap.byidx(-1) end,
               {description = "Swap with previous client by index", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "a", function() naughty.notify({text="Unimplemented!"}) end,
+    awful.key({ modkey, "Shift"}, "a", function() notif.error({text="Unimplemented!"}) end,
               {description = "Move focused client to previous tag", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "d", function() naughty.notify({text="Unimplemented!"}) end,
+    awful.key({ modkey, "Shift"}, "d", function() notif.error({text="Unimplemented!"}) end,
               {description = "Move focused client to next tag", group = "client"}),
 
     -- Restore minimzed clients

@@ -1,7 +1,8 @@
-local notif = require "notifs"
 local awful = require "awful"
-local beautiful = require "beautiful"
 local gears = require "gears"
+local notif = require "notif"
+
+local beautiful = require "beautiful"
 
 local DEFAULT = 50
 local current = DEFAULT
@@ -30,8 +31,8 @@ local function send_notif(from_toggle_mute)
 
     -- Send notification and update notif_id
     notif_id = notif.info("Audio", text, {
-        icon = icon,
-        icon_size = 35,
+        --icon = icon,
+        --icon_size = 35,
         replaces_id = notif_id
     }).id
 end

@@ -2,13 +2,13 @@
 require("awful.autofocus")
 
 -- Notification library
-local notify = require "notifs"
+local notif = require "notif"
 
 -- Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
-    notify.error(
+    notif.error(
         "Oops, there were errors during startup!",
         awesome.startup_errors
     )
@@ -22,7 +22,7 @@ do
         if in_error then return end
         in_error = true
 
-        notify.error(
+        notif.error(
             "Oops, an error happened!",
             tostring(err)
         )
