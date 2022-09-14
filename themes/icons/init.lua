@@ -1,3 +1,6 @@
+-- TODO: Rename ALL icons to follow the following format:
+-- TODO: <namespace>-<modifiers>-<"fill"|"no-fill">-<"light"-"dark"-"color">.<"png"|"svg">
+
 local HOME = os.getenv("HOME")
 local THEMES = HOME .. "/.config/awesome/themes"
 local ICONS_DIR = THEMES .. "/icons/files"

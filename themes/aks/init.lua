@@ -106,8 +106,6 @@ theme.infocus_font = "Cascadia Code PL Semibold 9.5"
 
 theme.wallpaper = THEME_DIR .. "/wallpaper.png"
 
--- TODO: Rename ALL icons to follow the following format:
--- TODO: <namespace>-<modifiers>-<"fill"|"no-fill">-<"light"-"dark"-"color">.<"png"|"svg">
 theme.icons = require "themes.icons"
 
 theme.layout_floating = theme.icons.layout.floating
