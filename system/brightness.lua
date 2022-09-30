@@ -29,11 +29,14 @@ local function send_notif()
     local text = "Brightness: " .. (tonumber(current) / 10) .. "%"
 
     local icon
+
+    --[[
     if current > 500 then
         icon = beautiful.icons.system.brightness.high
     else
         icon = beautiful.icons.system.brightness.low
     end
+    --]]
 
     -- Send notification and update notif_id
     notif_id = notif.info("Display", text, {
