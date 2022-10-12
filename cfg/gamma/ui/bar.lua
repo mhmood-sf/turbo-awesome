@@ -55,6 +55,7 @@ return function(s)
     s.elements.bar = awful.wibar({
         position = "top",
         screen = s,
+        height = 25,
         ontop = false,
         bg = (beautiful.wibar_bg_normal or beautiful.color.black or "#00000000")
     })

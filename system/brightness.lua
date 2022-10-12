@@ -20,7 +20,7 @@ local beautiful = require "beautiful"
 -- `<user> ALL=(root) NOPASSWD: /home/<user>/.config/awesome/system/brightness.sh`
 local sh_script = "~/.config/awesome/system/brightness.sh"
 
-local DEFAULT = 200
+local DEFAULT = 300
 local current = DEFAULT
 local backlight = "/sys/class/backlight/intel_backlight/brightness"
 local notif_id

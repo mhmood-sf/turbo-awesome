@@ -81,13 +81,13 @@ theme.menu_bg_focus = color.black
 theme.menu_fg_focus = color.accent
 
 -- Clock
-theme.clock_font = "Roboto Bold 10"
+theme.clock_font = "Hack Mono Bold 9.5"
 
 -- Minilist
 theme.minilist_font = "Cascadia Code PL 11"
 
 -- Notifications
-theme.notification_font = "Cascadia Code PL 9"
+theme.notification_font = "Cascadia Code PL 10"
 theme.notification_margin = 10
 theme.notification_border_width = 2
 
