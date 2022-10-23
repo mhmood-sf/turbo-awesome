@@ -43,4 +43,3 @@ return {
     increase_warmth,
     decrease_warmth
 }
-
