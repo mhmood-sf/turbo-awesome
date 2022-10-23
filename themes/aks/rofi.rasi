@@ -49,7 +49,7 @@ window {
 mainbox {
     padding: 20;
     background-color: var(normal-bg);
-    border: 2 solid 2;
+    border: 1 solid 1;
     border-color: var(main-border);
 }
 
