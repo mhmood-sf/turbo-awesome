@@ -10,7 +10,7 @@ local dpi = xresources.apply_dpi
 local default_opts = {
 --  text           = "",
 --  title          = "",
-    timeout        = beautiful.notification_timeout or 5,
+    timeout        = beautiful.notification_timeout or 3,
 --  hover_timeout  = 0,
 --  screen         = 0,
     position       = beautiful.notification_position or "top_right",
@@ -74,5 +74,6 @@ end
 
 return {
     info = info,
-    error = error
+    error = error,
+    defaults = default_opts
 }
