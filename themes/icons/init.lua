@@ -13,8 +13,10 @@ return {
     },
 
     layout = {
-        spiral   = ICONS_DIR .. "/layout/spiralw.png",
-        floating = ICONS_DIR .. "/layout/floatingw.png",
+        spiral_light   = ICONS_DIR .. "/layout/spiral-light.png",
+        floating_light = ICONS_DIR .. "/layout/floating-light.png",
+        spiral_dark    = ICONS_DIR .. "/layout/spiral-dark.png",
+        floating_dark  = ICONS_DIR .. "/layout/floating-dark.png",
     },
 
     apps = {
