@@ -64,10 +64,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "s", function () awful.client.swap.byidx(-1) end,
               {description = "Swap with previous client by index", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "a", function() notif.error({text="Unimplemented!"}) end,
+    awful.key({ modkey, "Shift"}, "a", function() notif.error("Error", "Unimplemented!") end,
               {description = "Move focused client to previous tag", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "d", function() notif.error({text="Unimplemented!"}) end,
+    awful.key({ modkey, "Shift"}, "d", function() notif.error("Error", "Unimplemented!") end,
               {description = "Move focused client to next tag", group = "client"}),
 
     -- Restore minimzed clients

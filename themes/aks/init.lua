@@ -41,7 +41,7 @@ theme.border_focus  = color.accent
 theme.border_marked = color.prominent
 
 -- Taglist
-theme.taglist_font = "Google Sans Medium 9"
+theme.taglist_font = "Google Sans Medium 8"
 
 theme.taglist_fg_focus = color.accent
 theme.taglist_bg_focus = gears.color.transparent
@@ -81,15 +81,15 @@ theme.menu_bg_focus = color.black
 theme.menu_fg_focus = color.accent
 
 -- Clock
-theme.clock_font = "Google Sans Italic Semibold 10"
+theme.clock_font = "Google Sans Medium 10"
 
 -- Minilist
-theme.minilist_font = "Google Sans Medium 9"
+theme.minilist_font = "Google Sans Medium 8"
 
 -- Notifications
 theme.notification_font = "Google Sans Medium 10"
 theme.notification_margin = 10
-theme.notification_border_width = 2
+theme.notification_border_width = 1
 
 theme.notification_bg = color.dark
 theme.notification_fg = color.white
