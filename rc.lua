@@ -10,7 +10,8 @@ modkey = "Mod4"
 require "system.brightness"
 require "system.nightlight"
 require "system.audio"
-require "system.compositor"
+-- General settings (starts picom, runs xinput commands, etc.)
+require "system.settings"
 
 -- This file declares global variables for running applications
 -- like the file manager or browser etc.
