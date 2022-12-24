@@ -20,8 +20,8 @@ client.connect_signal("manage", function (c)
 
     -- Set a comfy height/width for floating terminal windows.
     if c.class == "kitty" then
-        c.height = 400
-        c.width = 500
+        c.height = 500
+        c.width = 600
     end
 
     -- Center all windows (only applies to floating windows)

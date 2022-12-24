@@ -30,18 +30,18 @@ theme.color.prominent = theme.color.green
 
 local color = theme.color
 
-theme.font          = "Google Sans Medium 10"
+theme.font          = "Google Sans Medium 12"
 
 theme.bg_systray    = color.black
 
-theme.useless_gap   = dpi(5)
+theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(0)
 theme.border_normal = color.dark
 theme.border_focus  = color.accent
 theme.border_marked = color.prominent
 
 -- Taglist
-theme.taglist_font = "Google Sans Medium 8"
+theme.taglist_font = "Google Sans Medium 10"
 
 theme.taglist_fg_focus = color.accent
 theme.taglist_bg_focus = gears.color.transparent
@@ -81,15 +81,15 @@ theme.menu_bg_focus = color.black
 theme.menu_fg_focus = color.accent
 
 -- Clock
-theme.clock_font = "Google Sans Medium 10"
+theme.clock_font = "Google Sans Medium 12"
 
 -- Minilist
-theme.minilist_font = "Google Sans Medium 8"
+theme.minilist_font = "Google Sans Medium 10"
 
 -- Notifications
-theme.notification_font = "Google Sans Medium 10"
+theme.notification_font = "Google Sans Medium 12"
 theme.notification_margin = 10
-theme.notification_border_width = 1
+theme.notification_border_width = 2
 
 theme.notification_bg = color.dark
 theme.notification_fg = color.white
@@ -102,7 +102,7 @@ theme.notification_error_border_color = color.red
 -- Infocus
 theme.infocus_bg = color.accent
 theme.infocus_fg = color.black
-theme.infocus_font = "Google Sans Medium 9.5"
+theme.infocus_font = "Google Sans Medium 10"
 
 theme.wallpaper = THEME_DIR .. "/wallpaper.png"
 

@@ -14,23 +14,25 @@ local color = {
     min_normal = beautiful.titlebar_minimize_button_normal or "#999999"
 }
 
+-- Fns for left/right side rounded titlebars.
 local tb_left_shape = function(cr, w, h)
     return gears.shape.partially_rounded_rect(cr, w, h, true, false, false, true, 10)
 end
-
 local tb_right_shape = function(cr, w, h)
     return gears.shape.partially_rounded_rect(cr, w, h, false, true, true, false, 10)
 end
 
+-- Function to generate a circle shape as a surface.
 local button_surface = function(shape_color)
     return gears.surface.load_from_shape(
-        25,
-        25,
+        20,
+        20,
         gears.shape.circle,
         shape_color
     )
 end
 
+-- Attach the right-side titlebar to provided client.
 local set_right_titlebar = function(c)
     local right_titlebar = awful.titlebar(c, {
         position = "right",
@@ -64,6 +66,7 @@ client.connect_signal("unfocus", function(c)
     if c.update_focus then c.update_focus(false) end
 end)
 
+-- Main function that takes a client obj and sets up the titlebars.
 return function(c)
     -- Close button
     local close_button = awful.button({}, 1, function()
@@ -132,7 +135,7 @@ return function(c)
 
     local titlebar = awful.titlebar(c, {
         position = "left",
-        size = 25,
+        size = 30,
         bg_focus = gears.color.transparent,
         bg_normal = gears.color.transparent
     })
@@ -149,21 +152,21 @@ return function(c)
                     widget = wibox.container.margin,
                     top = 10,
                     bottom = 10,
-                    left = 7,
+                    left = 8,
                     right = 7,
                     close_button_widget
                 },
                 {
                     widget = wibox.container.margin,
                     bottom = 10,
-                    left = 7,
+                    left = 8,
                     right = 7,
                     max_button_widget
                 },
                 {
                     widget = wibox.container.margin,
                     bottom = 10,
-                    left = 7,
+                    left = 8,
                     right = 7,
                     min_button_widget
                 },
@@ -172,7 +175,7 @@ return function(c)
             {
                 widget = wibox.container.margin,
                 bottom = 10,
-                left = 7,
+                left = 8,
                 right = 7,
                 focus_button_widget
             }
