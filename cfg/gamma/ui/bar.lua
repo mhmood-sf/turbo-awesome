@@ -51,6 +51,35 @@ local clock = wibox.widget {
     }
 }
 
+local clock_tooltip = awful.tooltip {
+    objects = { clock }
+}
+
+clock:connect_signal("mouse::enter", function()
+    awful.spawn.easy_async_with_shell("date", function(out)
+        clock_tooltip.text = out:match("(.-)%s*$")
+    end)
+end)
+
+local battery = awful.widget.watch("acpi", 60, function(widget, stdout)
+    local pct = stdout:match("%d+%%")
+    local color = beautiful.color.white
+    if not stdout:match("Discharging") then
+        color = beautiful.color.yellow
+    end
+    widget:set_markup("<span foreground='" .. color .. "'>" .. pct .. "</span>")
+end)
+
+local battery_tooltip = awful.tooltip {
+    objects = { battery }
+}
+
+battery:connect_signal("mouse::enter", function()
+    awful.spawn.easy_async_with_shell("acpi", function(out)
+        battery_tooltip.text = out:match("(.-)%s*$")
+    end)
+end)
+
 return function(s)
     s.elements.bar = awful.wibar({
         position = "top",
@@ -85,8 +114,8 @@ return function(s)
             halign = "right",
             {
                 layout = wibox.layout.fixed.horizontal,
-                tray,
-                nil,
+                --tray,
+                battery,
                 --infocus(s),
                 layout
             },
