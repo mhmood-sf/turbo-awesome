@@ -93,12 +93,14 @@ return function(c)
 
     -- The focus button can be used to resize and move clients as well.
     local focus_button = gears.table.join(
+        -- Pressing and dragging the button drags the client.
         awful.button({}, 1, function()
             client.focus = c
             c:raise()
             awful.mouse.client.move(c)
         end),
-        awful.button({}, 3, function()
+        -- Holding modkey while dragging the button resizes the client.
+        awful.button({ modkey }, 1, function()
             client.focus = c
             c:raise()
             awful.mouse.client.resize(c)

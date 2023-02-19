@@ -32,7 +32,9 @@ clientkeys = gears.table.join(
 clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
-    end),
+    end)
+
+    --[[ No need for this since I already have the button for moving/resizing clients.
 
     -- Move client
     awful.button({ modkey }, 1, function (c)
@@ -45,5 +47,7 @@ clientbuttons = gears.table.join(
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.resize(c)
     end)
+
+    --]]
 )
 
