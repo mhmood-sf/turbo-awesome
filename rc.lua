@@ -17,9 +17,8 @@ require "system.settings"
 -- like the file manager or browser etc.
 require "system.apps"
 
--- Set up global/client bindings
--- NOTE: Needs to be called first for some reason.
-require "bindings"
-
 -- Delegate everything else to configuration
 require "cfg.gamma"
+
+-- Set up global/client bindings
+require "bindings"
