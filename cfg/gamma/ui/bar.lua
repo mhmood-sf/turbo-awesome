@@ -52,7 +52,8 @@ local clock = wibox.widget {
 }
 
 local clock_tooltip = awful.tooltip {
-    objects = { clock }
+    objects = { clock },
+    delay_show = 1
 }
 
 clock:connect_signal("mouse::enter", function()
@@ -62,16 +63,19 @@ clock:connect_signal("mouse::enter", function()
 end)
 
 local battery = awful.widget.watch("acpi", 60, function(widget, stdout)
-    local pct = stdout:match("%d+%%")
+    local pct = stdout:match("(%d+)%%")
+
     local color = beautiful.color.white
     if not stdout:match("Discharging") then
         color = beautiful.color.yellow
     end
-    widget:set_markup("<span foreground='" .. color .. "'>" .. pct .. "</span>")
+
+    widget:set_markup("<span foreground='" .. color .. "'>" .. tostring(pct) .. "%</span> ")
 end)
 
 local battery_tooltip = awful.tooltip {
-    objects = { battery }
+    objects = { battery },
+    delay_show = 1
 }
 
 battery:connect_signal("mouse::enter", function()
