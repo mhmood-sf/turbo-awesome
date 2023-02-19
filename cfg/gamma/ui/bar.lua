@@ -71,10 +71,6 @@ local battery = awful.widget.watch("acpi", 60, function(widget, stdout)
     end
 
     widget:set_markup("<span foreground='" .. color .. "'>" .. tostring(pct) .. "%</span> ")
-
-    if pct < 10 then
-        awful.spawn "notify 1s 'Battery low!"
-    end
 end)
 
 local battery_tooltip = awful.tooltip {
