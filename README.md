@@ -44,3 +44,4 @@ and then also semantic color fields (so like "info", "warning", "accent",
   awesomewm, like audio, brightness, music clients, etc.
 - `themes/`: Awesome themes, responsible mainly for the colors & icons used.
 - `utils/`: Other utilities.
+- `misc/`: configs for other stuff i use in my setup. usually not up-to-date though.

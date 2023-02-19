@@ -1,0 +1,7 @@
+include aks-dark
+#include aks-light
+
+set smooth-scroll "true"
+set font "monospace 12"
+
+set recolor false
