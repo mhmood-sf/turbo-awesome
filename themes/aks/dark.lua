@@ -13,7 +13,8 @@ local theme = {}
 theme.color = {
     black  = "#17171C",
     dark   = "#222430",
-    light  = "#5B697B",
+    grey   = "#5B697B",
+    light  = "#DADEF1",
     white  = "#ECEFF4",
     red    = "#EF476F",
     orange = "#FE995E",
@@ -49,7 +50,7 @@ theme.taglist_bg_focus = gears.color.transparent
 theme.taglist_fg_occupied = color.white
 theme.taglist_bg_occupied = gears.color.transparent
 
-theme.taglist_fg_empty = color.light
+theme.taglist_fg_empty = color.grey
 theme.taglist_bg_empty = gears.color.transparent
 
 theme.taglist_fg_urgent = color.red
@@ -63,19 +64,19 @@ theme.titlebar_bg_normal = color.black
 theme.titlebar_fg_normal = color.white
 
 theme.titlebar_close_button_focus = color.red
-theme.titlebar_close_button_normal = color.light
+theme.titlebar_close_button_normal = color.grey
 
 theme.titlebar_maximized_button_focus = color.green
-theme.titlebar_maximized_button_normal = color.light
+theme.titlebar_maximized_button_normal = color.grey
 
 theme.titlebar_minimize_button_focus = color.orange
-theme.titlebar_minimize_button_normal = color.light
+theme.titlebar_minimize_button_normal = color.grey
 
 theme.titlebar_drag_button_focus = color.accent
-theme.titlebar_drag_button_normal = color.light
+theme.titlebar_drag_button_normal = color.grey
 
 -- Tooltips
-theme.tooltip_bg = color.white
+theme.tooltip_bg = color.light
 theme.tooltip_fg = color.black
 theme.tooltip_shape = function(cr, w, h)
     return gears.shape.rounded_rect(cr, w, h, 3)
@@ -102,12 +103,12 @@ theme.notification_shape = function(cr, w, h)
     return gears.shape.rounded_rect(cr, w, h, 5)
 end
 
-theme.notification_bg = color.accent
+theme.notification_bg = color.light
 theme.notification_fg = color.black
 theme.notification_border_color = color.accent
 
-theme.notification_error_bg = color.dark
-theme.notification_error_fg = color.white
+theme.notification_error_bg = color.red
+theme.notification_error_fg = color.black
 theme.notification_error_border_color = color.red
 
 -- Infocus
