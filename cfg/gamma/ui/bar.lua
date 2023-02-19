@@ -53,7 +53,7 @@ local clock = wibox.widget {
 
 local clock_tooltip = awful.tooltip {
     objects = { clock },
-    delay_show = 1
+    delay_show = 0.5
 }
 
 clock:connect_signal("mouse::enter", function()
@@ -71,11 +71,15 @@ local battery = awful.widget.watch("acpi", 60, function(widget, stdout)
     end
 
     widget:set_markup("<span foreground='" .. color .. "'>" .. tostring(pct) .. "%</span> ")
+
+    if pct < 10 then
+        awful.spawn "notify 1s 'Battery low!"
+    end
 end)
 
 local battery_tooltip = awful.tooltip {
     objects = { battery },
-    delay_show = 1
+    delay_show = 0.5
 }
 
 battery:connect_signal("mouse::enter", function()
