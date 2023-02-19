@@ -74,6 +74,13 @@ theme.titlebar_minimize_button_normal = color.light
 theme.titlebar_drag_button_focus = color.accent
 theme.titlebar_drag_button_normal = color.light
 
+-- Tooltips
+theme.tooltip_bg = color.white
+theme.tooltip_fg = color.black
+theme.tooltip_shape = function(cr, w, h)
+    return gears.shape.rounded_rect(cr, w, h, 3)
+end
+
 -- Menu
 theme.menu_bg_normal = color.black
 theme.menu_fg_normal = color.white
@@ -89,10 +96,14 @@ theme.minilist_font = "Google Sans Medium 10"
 -- Notifications
 theme.notification_font = "Google Sans Medium 12"
 theme.notification_margin = 10
-theme.notification_border_width = 2
+theme.notification_border_width = 0
 
-theme.notification_bg = color.dark
-theme.notification_fg = color.white
+theme.notification_shape = function(cr, w, h)
+    return gears.shape.rounded_rect(cr, w, h, 5)
+end
+
+theme.notification_bg = color.accent
+theme.notification_fg = color.black
 theme.notification_border_color = color.accent
 
 theme.notification_error_bg = color.dark
@@ -104,7 +115,8 @@ theme.infocus_bg = color.accent
 theme.infocus_fg = color.black
 theme.infocus_font = "Google Sans Medium 10"
 
-theme.wallpaper = THEME_DIR .. "/wallpaper.png"
+--theme.wallpaper = THEME_DIR .. "/wallpaper.png"
+theme.wallpaper = THEME_DIR .. "/wallpaper2.jpg"
 
 theme.icons = require "themes.icons"
 
