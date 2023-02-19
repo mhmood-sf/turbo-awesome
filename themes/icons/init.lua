@@ -20,18 +20,18 @@ return {
     },
 
     apps = {
-        office      = ICONS_DIR .. "/apps/stack-fill-light.png",
-        browser     = ICONS_DIR .. "/apps/firefox-fill-light.png",
-        obsidian    = ICONS_DIR .. "/apps/obsidian.png",
-        terminal    = ICONS_DIR .. "/apps/terminal-window-fill-light.png",
-        filemanager = ICONS_DIR .. "/system/folders-fill-light.png",
-        musicplayer = ICONS_DIR .. "/apps/headphones-fill-light.png"
+        office_light      = ICONS_DIR .. "/apps/stack-fill-light.png",
+        browser_light     = ICONS_DIR .. "/apps/firefox-fill-light.png",
+        terminal_light    = ICONS_DIR .. "/apps/terminal-window-fill-light.png",
+        filemanager_light = ICONS_DIR .. "/apps/folders-fill-light.png",
+        musicplayer_light = ICONS_DIR .. "/apps/headphones-fill-light.png",
+        obsidian          = ICONS_DIR .. "/apps/obsidian.png",
     },
 
     system = {
-        cpu  = ICONS_DIR .. "/system/gauge.png",
-        mem  = ICONS_DIR .. "/system/cpu.png",
-        temp = ICONS_DIR .. "/system/thermometer-simple.png",
+        cpu_dark  = ICONS_DIR .. "/system/cpu-dark.png",
+        mem_dark  = ICONS_DIR .. "/system/mem-dark.png",
+        temp_dark = ICONS_DIR .. "/system/temp-dark.png",
 
         audio = {
             mute   = ICONS_DIR .. "/system/speaker-x.png",
@@ -46,13 +46,15 @@ return {
         },
 
         battery = {
-            low      = ICONS_DIR .. "/system/battery-low.png",
-            high     = ICONS_DIR .. "/system/battery-high.png",
-            charging = ICONS_DIR .. "/system/battery-charging.png",
+            warning_light  = ICONS_DIR .. "/system/battery-warning-light.png",
+            low_light      = ICONS_DIR .. "/system/battery-low-light.png",
+            med_light      = ICONS_DIR .. "/system/battery-medium-light.png",
+            high_light     = ICONS_DIR .. "/system/battery-full-light.png",
+            charging_light = ICONS_DIR .. "/system/battery-charging-light.png",
         },
 
         interface = {
-            reboot   = ICONS_DIR .. "/system/arrow-clockwise-fill-light.png",
+            reboot   = ICONS_DIR .. "/system/reboot-fill-light.png",
             shutdown = ICONS_DIR .. "/system/power-fill-light.png"
         }
     }

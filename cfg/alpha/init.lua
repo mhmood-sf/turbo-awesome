@@ -31,6 +31,15 @@ do
     end)
 end
 
+-- Theme overrides (should find a better awy of handling this tbh)
+local beautiful = require "beautiful"
+local xresources = require "beautiful.xresources"
+local dpi = xresources.apply_dpi
+
+beautiful.border_width = dpi(2)
+beautiful.border_normal = beautiful.color.dark
+beautiful.border_focus  = beautiful.color.accent
+beautiful.border_marked = beautiful.color.prominent
 
 -- Set up screens and layouts
 require "cfg.alpha.screens"
