@@ -50,4 +50,3 @@ clientbuttons = gears.table.join(
 
     --]]
 )
-
