@@ -12,7 +12,8 @@ Because right now it's very confusing, how some widgets are in the cfg's own
 directory, how some are in base, etc. etc.
 
 
-### Re-do theming The files in `themes/` should just export colors, icons, and
+### Re-do theming
+The files in `themes/` should just export colors, icons, and
 other basic stuff. Then the cfg should use those colors (ONLY) to handle
 coloring stuff. The themes can export base colors (like red, green, blue, etc)
 and then also semantic color fields (so like "info", "warning", "accent",
@@ -32,6 +33,8 @@ and then also semantic color fields (so like "info", "warning", "accent",
 ### Misc
 - Nicer bar please. top-right, just a hamburger menu maybe, and then top-left a
   profile picture sort of thing that will open a dashboard on click.
+- Titlebars: try `client.shape` instead of the complicated titlebar shape I'm
+  doing rn (which doesn't even work well with picom)
 
 ## Structure
 
