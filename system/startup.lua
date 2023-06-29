@@ -1,4 +1,3 @@
--- Run compositor in the background
 local s = require"awful".spawn
 
 -- Start compositor in background.
