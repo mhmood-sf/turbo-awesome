@@ -93,14 +93,8 @@ return function(c)
 
     -- The focus button can be used to resize and move clients as well.
     local focus_button = gears.table.join(
-        -- Pressing and dragging the button drags the client.
+        -- Pressing and dragging the button resizes the client.
         awful.button({}, 1, function()
-            client.focus = c
-            c:raise()
-            awful.mouse.client.move(c)
-        end),
-        -- Holding modkey while dragging the button resizes the client.
-        awful.button({ modkey }, 1, function()
             client.focus = c
             c:raise()
             awful.mouse.client.resize(c)
@@ -142,6 +136,13 @@ return function(c)
         bg_normal = gears.color.transparent
     })
 
+    local move_button = gears.table.join(
+        awful.button({ }, 1, function()
+            c:emit_signal("request::activate", "titlebar", {raise = true})
+            awful.mouse.client.move(c)
+        end)
+    )
+
     titlebar:setup {
         widget = wibox.container.background,
         bg = beautiful.color.black,
@@ -173,7 +174,10 @@ return function(c)
                     min_button_widget
                 },
             },
-            nil,
+            {
+                layout = wibox.layout.fixed.vertical,
+                buttons = move_button
+            },
             {
                 widget = wibox.container.margin,
                 bottom = 10,
@@ -219,3 +223,11 @@ return function(c)
     client.focus = c
     c.update_focus(true)
 end
+
+-- TODO: Titlebars to move clients.
+--        -- Pressing and dragging the button drags the client.
+--        awful.button({}, 1, function()
+--            client.focus = c
+--            c:raise()
+--            awful.mouse.client.move(c)
+--        end),
