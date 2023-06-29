@@ -5,6 +5,22 @@ local notif = require "notif"
 local audio = require "system.audio"
 local brightness = require "system.brightness"
 
+local function move_to_adjacent_tag(i)
+    if not client.focus then return end
+
+    local tags = client.focus.screen.tags
+    local current_index = client.focus.screen.selected_tag.index
+    local new_index = (i > 0) and current_index + 1 or current_index - 1
+
+    if new_index == #tags + 1 then
+        client.focus:move_to_tag(tags[1])
+    elseif new_index == 0 then
+        client.focus:move_to_tag(tags[#tags])
+    else
+        client.focus:move_to_tag(tags[new_index])
+    end
+end
+
 -- Key bindings
 globalkeys = gears.table.join(
     -- Volum up/down/mute using amixer
@@ -30,6 +46,10 @@ globalkeys = gears.table.join(
     -- Open music player
     awful.key({ modkey }, "m", function() awful.spawn(musicplayer) end,
               {description = "Open music player", group = "launcher"}),
+
+    -- Open notes app
+    awful.key({ modkey }, "n", function() awful.spawn(notes) end,
+              {description = "Open notes app", group = "launcher"}),
 
     -- Open rofi
     awful.key({ modkey }, "r", function() awful.spawn(launcher) end,
@@ -66,10 +86,10 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "s", function () awful.client.swap.byidx(-1) end,
               {description = "Swap with previous client by index", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "a", function() notif.error("Error", "Unimplemented!") end,
+    awful.key({ modkey, "Shift"}, "a", function() move_to_adjacent_tag(-1) end,
               {description = "Move focused client to previous tag", group = "client"}),
 
-    awful.key({ modkey, "Shift"}, "d", function() notif.error("Error", "Unimplemented!") end,
+    awful.key({ modkey, "Shift"}, "d", function() move_to_adjacent_tag(1) end,
               {description = "Move focused client to next tag", group = "client"}),
 
     -- Restore minimzed clients
