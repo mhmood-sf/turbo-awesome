@@ -1,7 +1,5 @@
 # turbo-awesome
 
-## TODO
-
 ### Restructuring
 - Move basically ALL ui/widgets to cfg/base (maybe rename it cfg/widgets? or a
   new separate directory?).
