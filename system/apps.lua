@@ -19,3 +19,6 @@ musicplayer = terminal .. " -e cmus"
 
 -- Screenshot command
 screenshot = "flameshot gui"
+
+-- Notes
+notes = HOME .. "/Downloads/obsidian/Obsidian-1.3.3.AppImage"
