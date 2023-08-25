@@ -145,7 +145,7 @@ return function(c)
 
     titlebar:setup {
         widget = wibox.container.background,
-        bg = beautiful.color.black,
+        bg = beautiful.titlebar_bg_normal,
         shape = tb_left_shape,
         {
             layout = wibox.layout.align.vertical,
@@ -191,11 +191,14 @@ return function(c)
     -- For kitty windows, we add another titlebar to
     -- the left to get smoother rounding lol.
     -- Otherwise set c.shape to round_rect
+    --[[
     if c.class == "kitty" or c.name == "bash" then
         set_right_titlebar(c)
     else
         c.shape = tb_right_shape
     end
+    --]]
+    c.shape = tb_right_shape
 
     c.update_focus = function(focused)
         if focused then

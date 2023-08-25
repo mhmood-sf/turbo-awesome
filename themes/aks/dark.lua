@@ -35,11 +35,16 @@ theme.font          = "Google Sans Medium 12"
 
 theme.bg_systray    = color.black
 
+-- Clients
 theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(0)
 theme.border_normal = color.dark
 theme.border_focus  = color.accent
 theme.border_marked = color.prominent
+
+-- Wibar
+theme.wibar_bg = color.dark
+theme.wibar_fg = color.white
 
 -- Taglist
 theme.taglist_font = "Google Sans Medium 10"
@@ -60,7 +65,7 @@ theme.taglist_fg_volatile = color.red
 theme.taglist_bg_volatile = gears.color.transparent
 
 -- Titlebar
-theme.titlebar_bg_normal = color.black
+theme.titlebar_bg_normal = color.dark
 theme.titlebar_fg_normal = color.white
 
 theme.titlebar_close_button_focus = color.red

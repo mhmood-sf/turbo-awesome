@@ -1,7 +1,7 @@
 local s = require"awful".spawn
 
 -- Start compositor in background.
-s("picom -bcf -D 5")
+s("picom -bf -D 5")
 
 -- Enable tapping on touchpad.
 s("xinput set-prop 'MSFT0004:00 06CB:CD98 Touchpad' 'libinput Tapping Enabled' 1")

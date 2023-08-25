@@ -13,9 +13,12 @@ local layoutbox = awful.widget.layoutbox()
 layoutbox.forced_height = 20
 layoutbox.forced_width = 20
 
+local wibar_bg = beautiful.wibar_bg or beautiful.bg_normal or "#000000"
+local wibar_fg = beautiful.wibar_fg or beautiful.fg_normal or "#ffffff"
+
 local layout = wibox.widget {
     widget = wibox.container.background,
-    bg = beautiful.bg_normal,
+    bg = wibar_bg,
     forced_height = 30,
     forced_width = 30,
     {
@@ -41,8 +44,8 @@ local tray = wibox.widget {
 -- Clock
 local clock = wibox.widget {
     widget = wibox.container.background,
-    fg = beautiful.fg_normal,
-    bg = beautiful.bg_normal,
+    fg = wibar_fg,
+    bg = wibar_bg,
     {
         widget = wibox.widget.textclock,
         format = "%H:%M",
@@ -65,9 +68,9 @@ end)
 local battery = awful.widget.watch("acpi", 60, function(widget, stdout)
     local pct = stdout:match("(%d+)%%")
 
-    local color = beautiful.color.white
+    local color = wibar_fg
     if not stdout:match("Discharging") then
-        color = beautiful.color.yellow
+        color = beautiful.clock_charging or beautiful.color.yellow
     end
 
     widget:set_markup("<span foreground='" .. color .. "'>" .. tostring(pct) .. "%</span> ")
@@ -90,7 +93,7 @@ return function(s)
         screen = s,
         height = 30,
         ontop = false,
-        bg = (beautiful.wibar_bg_normal or beautiful.color.black or "#00000000")
+        bg = wibar_bg
     })
 
     s.elements.bar:setup {
