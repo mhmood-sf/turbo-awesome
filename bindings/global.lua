@@ -43,17 +43,13 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "t", function() awful.spawn(terminal) end,
               {description = "Open a terminal", group = "launcher"}),
 
-    -- Open music player
-    awful.key({ modkey }, "m", function() awful.spawn(musicplayer) end,
-              {description = "Open music player", group = "launcher"}),
+    -- Open mail
+    awful.key({ modkey }, "m", function() awful.spawn(email) end,
+              {description = "Open email client", group = "launcher"}),
 
     -- Open notes app
     awful.key({ modkey }, "n", function() awful.spawn(notes) end,
               {description = "Open notes app", group = "launcher"}),
-
-    -- Open rofi
-    awful.key({ modkey }, "r", function() awful.spawn(launcher) end,
-              {description = "Open launcher", group = "launcher"}),
 
     -- Open file manager
     awful.key({ modkey }, "o", function() awful.spawn(filemanager) end,
