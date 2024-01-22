@@ -3,13 +3,10 @@ local beautiful = require "beautiful"
 local HOME = os.getenv("HOME")
 
 -- Terminal: kitty
-terminal = "kitty"
+terminal = "wezterm.AppImage"
 
 -- Browser: firefox
 browser = HOME .. "/Downloads/firefox/firefox"
-
--- Launcher: rofi
-launcher = "rofi -show drun -theme " .. beautiful.rofi
 
 -- File Manager: Thunar
 filemanager = "thunar"
@@ -21,4 +18,7 @@ musicplayer = terminal .. " -e cmus"
 screenshot = "flameshot gui"
 
 -- Notes
-notes = HOME .. "/Downloads/obsidian/Obsidian-1.3.3.AppImage"
+notes = HOME .. "/Downloads/obsidian/Obsidian.AppImage"
+
+-- Email
+email = HOME .. "/Downloads/thunderbird/thunderbird"
