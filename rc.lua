@@ -1,5 +1,5 @@
 -- Init theme
-local theme = require "themes.aks.dark"
+local theme = require "themes.lazyfox"
 local beautiful = require "beautiful"
 beautiful.init(theme)
 
