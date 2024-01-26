@@ -2,8 +2,8 @@ local beautiful = require "beautiful"
 
 local HOME = os.getenv("HOME")
 
--- Terminal: kitty
-terminal = "wezterm.AppImage"
+-- Terminal: wezterm
+terminal = HOME .. "/Downloads/wezterm/wezterm.AppImage"
 
 -- Browser: firefox
 browser = HOME .. "/Downloads/firefox/firefox"

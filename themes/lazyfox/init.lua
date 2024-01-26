@@ -131,7 +131,7 @@ theme.notification_shape = function(cr, w, h)
     return gears.shape.rounded_rect(cr, w, h, 5)
 end
 
-theme.notification_bg = color.light
+theme.notification_bg = color.white
 theme.notification_fg = color.dark
 theme.notification_border_color = color.accent
 
