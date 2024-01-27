@@ -53,7 +53,8 @@ local color = theme.color
 
 theme.font          = "Google Sans Medium 12"
 
-theme.bg_systray    = color.white
+theme.bg_systray           = color.light
+theme.systray_icon_spacing = dpi(2)
 
 theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(0)

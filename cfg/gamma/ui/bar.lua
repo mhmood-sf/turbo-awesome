@@ -121,7 +121,7 @@ return function(s)
             halign = "right",
             {
                 layout = wibox.layout.fixed.horizontal,
-                --tray,
+                tray,
                 battery,
                 --infocus(s),
                 layout

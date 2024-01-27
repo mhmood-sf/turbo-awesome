@@ -1,2 +1,5 @@
-# Don't include rubato
+# Don't include 3rd party libs
 lib/
+
+# Or build artifacts
+*.so
