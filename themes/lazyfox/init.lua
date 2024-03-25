@@ -105,8 +105,8 @@ theme.titlebar_drag_button_focus = color.accent
 theme.titlebar_drag_button_normal = theme.palette.shade3
 
 -- Tooltips
-theme.tooltip_bg = color.light
-theme.tooltip_fg = color.black
+theme.tooltip_bg = color.dark
+theme.tooltip_fg = color.white
 theme.tooltip_shape = function(cr, w, h)
     return gears.shape.rounded_rect(cr, w, h, 3)
 end
